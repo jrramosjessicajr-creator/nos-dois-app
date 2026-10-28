@@ -1,0 +1,2594 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Nós Dois">
+<meta name="theme-color" content="#eee7d8">
+<title data-id="th-modified">Nós Dois 💑</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#eee7d8;background-image:linear-gradient(180deg,#eee7d8 0%,#e3dbc6 100%);background-attachment:fixed;color:#16211c;min-height:100vh;padding-bottom:80px;-webkit-font-smoothing:antialiased}
+:root{--pu:#7B6FF0;--gr:#4c7a52;--rd:#b5473a;--bl:#3e6e8e;--or:#bd9138;--pk:#a65043;--card:#f7f2e6;--bg:#eee7d8;--br:#d8cead;--t1:#16211c;--t2:#5b6a5f;--t3:#8a9186;--r:16px;--rs:12px;--shadow:0 1px 2px rgba(22,33,28,.05), 0 6px 18px rgba(22,33,28,.06)}
+@media(prefers-color-scheme:dark){body{background:#18160f;background-image:linear-gradient(180deg,#18160f 0%,#14120c 100%)}:root{--card:#221f16;--bg:#18160f;--br:#38331f;--t1:#f2ecda;--t2:#b3a98c;--t3:#7d7561;--shadow:0 1px 2px rgba(0,0,0,.3), 0 6px 18px rgba(0,0,0,.25)}}
+.mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
+.card{background:var(--card);border:1px solid var(--br);border-radius:var(--r);padding:16px 18px;margin-bottom:12px;box-shadow:var(--shadow)}
+.hdr{background:var(--card);border-bottom:1px solid var(--br);padding:14px 18px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.tabs{background:var(--card);border-bottom:1px solid var(--br);display:flex;position:sticky;top:53px;z-index:99;overflow-x:auto}
+.tab{flex:1;min-width:56px;padding:10px 4px;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--t2);font-size:9px;font-family:inherit}
+.tab.on{border-bottom-color:var(--pu);color:var(--pu);font-weight:500}
+.tab .ei{font-size:16px}
+.wrap{max-width:700px;margin:0 auto;padding:16px 14px}
+input,select{width:100%;padding:10px 12px;border-radius:var(--rs);border:0.5px solid var(--br);background:var(--card);color:var(--t1);font-size:16px;font-family:inherit;outline:none;-webkit-appearance:none}
+input:focus,select:focus{border-color:var(--pu)}
+.btn{padding:11px 16px;border-radius:var(--rs);border:none;cursor:pointer;font-size:14px;font-weight:500;font-family:inherit;transition:opacity .15s}
+.btn:active{opacity:.8}
+.btnp{background:var(--pu);color:#fff;width:100%}
+.btns{background:var(--bg);color:var(--t2);border:0.5px solid var(--br)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.st{background:var(--bg);border-radius:var(--rs);padding:10px 12px;border:1px solid var(--br)}
+.st p{margin:0;font-size:11px;color:var(--t2)}
+.st h3{margin:3px 0 0;font-size:15px;font-weight:600;font-family:'IBM Plex Mono',monospace}
+.fr{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:0.5px solid var(--br);font-size:13px}
+.fr:last-child{border-bottom:none}
+.fr span{color:var(--t2)}
+.fr strong{color:var(--t1);font-weight:600;font-family:'IBM Plex Mono',monospace}
+.bw{height:8px;background:var(--bg);border-radius:8px;overflow:hidden;margin:5px 0 2px}
+.bf{height:100%;border-radius:8px;transition:width .4s ease}
+.alr{border-radius:var(--rs);padding:10px 14px;font-size:13px;line-height:1.6;margin-bottom:8px}
+.sec{font-family:'Fraunces',serif;font-size:16px;font-weight:600;color:var(--t1);margin:0 0 12px;letter-spacing:-.01em}
+.sub{font-size:12px;color:var(--t2);margin:0 0 12px}
+.tag{font-size:10px;padding:2px 6px;border-radius:20px;font-weight:500;display:inline-block}
+.toast{position:fixed;top:16px;left:50%;transform:translateX(-50%);color:#fff;padding:10px 20px;border-radius:30px;font-size:13px;font-weight:500;z-index:9999;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,.2);pointer-events:none;transition:opacity .3s}
+.mo{position:fixed;inset:0;background:rgba(22,33,28,.55);z-index:500;display:flex;align-items:flex-end;justify-content:center}
+.mb{background:var(--card);border-radius:20px 20px 0 0;padding:22px 18px 40px;width:100%;max-width:700px;max-height:90vh;overflow-y:auto}
+.mt{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--t1);margin:0 0 16px;display:flex;justify-content:space-between;align-items:center}
+.cx-bar{height:14px;background:var(--bg);border-radius:10px;overflow:hidden;position:relative;margin-bottom:6px}
+select option{background:var(--card);color:var(--t1)}
+::-webkit-scrollbar{width:8px;height:8px}
+::-webkit-scrollbar-thumb{background:var(--br);border-radius:8px}
+</style>
+<meta property="og:title" content="Nós Dois 💑" data-id="th-modified"><meta property="og:image" content="https://tiiny.host/assets/logo-purple-bg.png" data-id="th-modified"><meta property="og:image:width" content="1501" data-id="th-modified"><meta property="og:image:height" content="1501" data-id="th-modified"><meta property="og:image:type" content="image/png" data-id="th-modified"><meta property="og:url" content="https://fuchsia-athena-63.tiiny.site/" data-id="th-modified"><meta property="og:type" content="website" data-id="th-modified"><script defer data-domain="fuchsia-athena-63.tiiny.site" src="https://analytics.tiiny.net/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script></head>
+<body>
+
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:11px">
+    <div style="width:6px;height:34px;border-radius:4px;background:linear-gradient(180deg, var(--pk) 0 50%, var(--bl) 50% 100%);flex-shrink:0"></div>
+    <div><div style="font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--t1);letter-spacing:-.01em">Nós Dois</div><div style="font-size:10px;color:var(--t2);letter-spacing:.02em">Finanças do casal · Jéssica &amp; Anderson</div></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:6px">
+    <button onclick="mesFiltro=mesAnterior(mesFiltro);render()" style="background:none;border:0.5px solid var(--br);border-radius:8px;cursor:pointer;color:var(--t2);font-size:15px;padding:4px 8px">‹</button>
+    <span id="mesLabel" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--t1);font-weight:500;min-width:80px;text-align:center"></span>
+    <button onclick="mesFiltro=mesProximo(mesFiltro);render()" style="background:none;border:0.5px solid var(--br);border-radius:8px;cursor:pointer;color:var(--t2);font-size:15px;padding:4px 8px">›</button>
+    <button onclick="loadData()" style="background:none;border:none;cursor:pointer;color:var(--t2);font-size:18px;padding:4px">↻</button>
+  </div>
+</div>
+
+<div class="tabs" id="tabBar"></div>
+<div class="wrap" id="content"></div>
+<div class="toast" id="toast" style="opacity:0"></div>
+
+<!-- MODAL LANÇAR -->
+<div class="mo" id="mLancar" style="display:none" onclick="if(event.target===this)fecharLancar()">
+<div class="mb" onclick="event.stopPropagation()">
+  <div class="mt"><span id="mLancarTit">Lançar gasto</span><button onclick="fecharLancar()" style="background:none;border:none;font-size:22px;cursor:pointer;color:var(--t2)">×</button></div>
+  <div style="display:flex;gap:8px;margin-bottom:14px">
+    <button class="btn" id="bExp" onclick="setTipo('expense')" style="flex:1;font-size:13px">💸 Gasto</button>
+    <button class="btn" id="bInc" onclick="setTipo('income')" style="flex:1;font-size:13px">💰 Receita</button>
+    <button class="btn" id="bParc" onclick="setTipo('parcelado')" style="flex:1;font-size:13px">📦 Parcelado</button>
+  </div>
+  <p style="font-size:12px;color:var(--t2);margin:0 0 6px">Descrição</p>
+  <input id="l_desc" placeholder="Ex: Botica Animale" oninput="fl.desc=this.value" style="margin-bottom:10px">
+  <div class="g2" style="margin-bottom:10px">
+    <div><p style="font-size:12px;color:var(--t2);margin:0 0 6px">Valor total (R$)</p><input id="l_amt" type="number" placeholder="0,00" oninput="fl.amount=this.value;atualizarParcela()"></div>
+    <div><p style="font-size:12px;color:var(--t2);margin:0 0 6px">Data 1ª parcela</p><input id="l_date" type="date" onchange="fl.date=this.value"></div>
+  </div>
+  <!-- parcelas (só aparece no modo parcelado) -->
+  <div id="parcBlock" style="display:none;margin-bottom:10px">
+    <div class="g2">
+      <div><p style="font-size:12px;color:var(--t2);margin:0 0 6px">Nº de parcelas</p>
+      <select id="l_parc" onchange="fl.parcelas=parseInt(this.value);atualizarParcela()">
+        <option value="2">2x</option>
+        <option value="3">3x</option>
+        <option value="4">4x</option>
+        <option value="5">5x</option>
+        <option value="6">6x</option>
+        <option value="7">7x</option>
+        <option value="8">8x</option>
+        <option value="9">9x</option>
+        <option value="10">10x</option>
+        <option value="12">12x</option>
+        <option value="18">18x</option>
+        <option value="24">24x</option>
+      </select></div>
+      <div><p style="font-size:12px;color:var(--t2);margin:0 0 6px">Valor por parcela</p>
+      <div id="parcValor" style="padding:10px 12px;border-radius:var(--rs);border:0.5px solid var(--br);background:var(--bg);font-size:16px;color:var(--pu);font-weight:500">R$ —</div></div>
+    </div>
+    <div style="margin-top:8px;padding:9px 13px;background:#7b6ff015;border:0.5px solid #7b6ff050;border-radius:10px;font-size:12px;color:var(--pu)" id="parcInfo"></div>
+  </div>
+  <p style="font-size:12px;color:var(--t2);margin:0 0 6px">Categoria</p>
+  <div style="display:flex;gap:8px;margin-bottom:10px;align-items:center">
+    <select id="l_cat" onchange="fl.cat=this.value;checkCx()" style="flex:1">
+    </select>
+    <button onclick="abrirNovaCategoria()" title="Nova categoria" style="padding:6px 10px;border-radius:var(--rs);border:0.5px solid var(--pu);background:transparent;color:var(--pu);cursor:pointer;font-size:16px;flex-shrink:0">+</button>
+  </div>
+  <p style="font-size:12px;color:var(--t2);margin:0 0 6px">Quem</p>
+  <select id="l_pessoa" onchange="fl.pessoa=this.value" style="margin-bottom:10px">
+    <option>Casal</option><option>Jéssica</option><option>Anderson</option>
+  </select>
+  <div id="cxInfo" style="display:none;margin-bottom:10px;padding:9px 13px;background:#7b6ff015;border:0.5px solid #7b6ff050;border-radius:10px;font-size:13px;color:var(--pu)"></div>
+  <p style="font-size:12px;color:var(--t2);margin:0 0 6px">Obs (opcional)</p>
+  <input id="l_note" placeholder="Opcional" oninput="fl.note=this.value" style="margin-bottom:14px">
+  <button class="btn btnp" onclick="lancar()">Lançar</button>
+</div>
+</div>
+
+<!-- MODAL SENHA PDF -->
+<div class="mo" id="mSenhaPDF" style="display:none" onclick="if(event.target===this)cancelarSenhaPDF()">
+<div class="mb" style="max-width:340px;padding:22px 18px" onclick="event.stopPropagation()">
+  <div class="mt"><span>🔒 Senha do PDF</span><button onclick="cancelarSenhaPDF()" style="background:none;border:none;font-size:22px;cursor:pointer;color:var(--t2)">×</button></div>
+  <p style="font-size:12px;color:var(--t2);margin:0 0 12px;line-height:1.5">Essa fatura está protegida por senha. No Itaú, costuma ser os <strong>5 primeiros dígitos do CPF</strong> do titular do cartão.</p>
+  <input id="senhaPdfInput" type="password" placeholder="Digite a senha" inputmode="numeric" style="margin-bottom:8px" onkeydown="if(event.key==='Enter')confirmarSenhaPDF()">
+  <p id="senhaPdfErro" style="font-size:12px;color:#E86858;margin:0 0 10px;display:none">Senha incorreta. Tente novamente.</p>
+  <div style="display:flex;gap:8px">
+    <button onclick="cancelarSenhaPDF()" style="flex:1;padding:10px;border-radius:var(--rs);border:0.5px solid var(--br);background:var(--bg);color:var(--t2);cursor:pointer;font-family:inherit">Cancelar</button>
+    <button onclick="confirmarSenhaPDF()" style="flex:2;padding:10px;border-radius:var(--rs);border:none;background:var(--pu);color:#fff;font-weight:500;cursor:pointer;font-family:inherit">Confirmar</button>
+  </div>
+</div>
+</div>
+
+<!-- MODAL EDITAR CAIXINHA -->
+<div class="mo" id="mCx" style="display:none" onclick="if(event.target===this)fecharCx()">
+<div class="mb" onclick="event.stopPropagation()">
+  <div class="mt"><span id="mCxTit">Nova caixinha</span><button onclick="fecharCx()" style="background:none;border:none;font-size:22px;cursor:pointer;color:var(--t2)">×</button></div>
+  <p style="font-size:12px;color:var(--t2);margin:0 0 6px">Emoji</p>
+  <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px" id="mCxEmojis"></div>
+  <p style="font-size:12px;color:var(--t2);margin:0 0 6px">Nome</p>
+  <input id="cx_name" placeholder="Ex: Emergência" style="margin-bottom:10px">
+  <div class="g2" style="margin-bottom:10px">
+    <div><p style="font-size:12px;color:var(--t2);margin:0 0 6px">Aporte mensal (R$)</p><input id="cx_aporte" type="number" placeholder="700"></div>
+    <div><p style="font-size:12px;color:var(--t2);margin:0 0 6px">Meta (R$)</p><input id="cx_meta" type="number" placeholder="35000"></div>
+  </div>
+  <div class="g2" style="margin-bottom:10px">
+    <div><p style="font-size:12px;color:var(--t2);margin:0 0 6px">Valor guardado (R$)</p><input id="cx_saved" type="number" placeholder="0"></div>
+    <div><p style="font-size:12px;color:var(--t2);margin:0 0 6px">Cor</p><div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px" id="mCxCores"></div></div>
+  </div>
+  <p style="font-size:12px;color:var(--t2);margin:0 0 6px">Pausar até (volta a contar em)</p>
+  <div style="display:flex;gap:8px;margin-bottom:4px">
+    <input id="cx_volta" type="month" style="flex:1">
+    <button type="button" onclick="document.getElementById('cx_volta').value=''" style="padding:0 12px;border-radius:var(--rs);border:0.5px solid var(--br);background:var(--bg);color:var(--t2);cursor:pointer;font-family:inherit;font-size:12px">Limpar</button>
+  </div>
+  <p style="font-size:10.5px;color:var(--t2);margin:0 0 14px">Antes desse mês a caixinha não entra na transferência. Deixe vazio pra contar normal.</p>
+  <button class="btn btnp" onclick="salvarCx()" style="margin-bottom:10px">Salvar</button>
+  <button id="btnDelCx" onclick="deletarCx()" style="display:none;width:100%;padding:11px;border-radius:var(--rs);border:0.5px solid #E86858;background:transparent;color:#E86858;cursor:pointer;font-size:14px;font-family:inherit">Excluir caixinha</button>
+</div>
+</div>
+
+<!-- MODAL APORTE CAIXINHA -->
+<div class="mo" id="mAporte" style="display:none" onclick="if(event.target===this)fecharAporte()">
+<div class="mb" onclick="event.stopPropagation()">
+  <div class="mt"><span id="mAporteTit">Adicionar à caixinha</span><button onclick="fecharAporte()" style="background:none;border:none;font-size:22px;cursor:pointer;color:var(--t2)">×</button></div>
+  <p style="font-size:12px;color:var(--t2);margin:0 0 6px">Valor (R$)</p>
+  <input id="a_val" type="number" placeholder="Ex: 700" style="margin-bottom:14px">
+  <button class="btn btnp" onclick="confirmarAporte()">Adicionar</button>
+</div>
+</div>
+
+<!-- MODAL ORÇAMENTO DA REFORMA -->
+<div class="mo" id="mOrcRef" style="display:none" onclick="if(event.target===this)fecharOrcamentoReforma()">
+<div class="mb" onclick="event.stopPropagation()">
+  <div class="mt"><span>Orçamento da reforma</span><button onclick="fecharOrcamentoReforma()" style="background:none;border:none;font-size:22px;cursor:pointer;color:var(--t2)">×</button></div>
+  <p style="font-size:12px;color:var(--t2);margin:0 0 6px">Valor total planejado (R$)</p>
+  <input id="ref_orcamento" type="number" placeholder="Ex: 30000" style="margin-bottom:14px">
+  <button class="btn btnp" onclick="salvarOrcamentoReforma()">Salvar</button>
+</div>
+</div>
+
+<!-- MODAL ITEM DA REFORMA -->
+<div class="mo" id="mItemRef" style="display:none" onclick="if(event.target===this)fecharItemReforma()">
+<div class="mb" onclick="event.stopPropagation()">
+  <div class="mt"><span id="mItemRefTit">Novo item</span><button onclick="fecharItemReforma()" style="background:none;border:none;font-size:22px;cursor:pointer;color:var(--t2)">×</button></div>
+  <p style="font-size:12px;color:var(--t2);margin:0 0 6px">Nome do item</p>
+  <input id="ir_nome" placeholder="Ex: Piso, Pintura, Elétrica" style="margin-bottom:10px">
+  <p style="font-size:12px;color:var(--t2);margin:0 0 6px">Planejado (R$)</p>
+  <input id="ir_planejado" type="number" placeholder="Ex: 5000" style="margin-bottom:14px">
+  <button class="btn btnp" onclick="salvarItemReforma()" style="margin-bottom:10px">Salvar</button>
+  <button id="btnDelItemRef" onclick="deletarItemReforma()" style="display:none;width:100%;padding:11px;border-radius:var(--rs);border:0.5px solid #E86858;background:transparent;color:#E86858;cursor:pointer;font-size:14px;font-family:inherit">Excluir item</button>
+</div>
+</div>
+
+<!-- MODAL GASTO DA REFORMA -->
+<div class="mo" id="mGastoRef" style="display:none" onclick="if(event.target===this)fecharGastoReforma()">
+<div class="mb" onclick="event.stopPropagation()">
+  <div class="mt"><span id="mGastoRefTit">+ Gasto</span><button onclick="fecharGastoReforma()" style="background:none;border:none;font-size:22px;cursor:pointer;color:var(--t2)">×</button></div>
+  <p style="font-size:12px;color:var(--t2);margin:0 0 6px">Descrição (opcional)</p>
+  <input id="gr_desc" placeholder="Ex: Mão de obra pedreiro" style="margin-bottom:10px">
+  <p style="font-size:12px;color:var(--t2);margin:0 0 6px">Valor (R$)</p>
+  <input id="gr_valor" type="number" placeholder="Ex: 800" style="margin-bottom:14px">
+  <button class="btn btnp" id="btnSalvarGastoRef" onclick="confirmarGastoReforma()" style="margin-bottom:10px">Adicionar</button>
+  <button id="btnDelGastoRef" onclick="excluirGastoReforma()" style="display:none;width:100%;padding:11px;border-radius:var(--rs);border:0.5px solid #E86858;background:transparent;color:#E86858;cursor:pointer;font-size:14px;font-family:inherit">Excluir gasto</button>
+</div>
+</div>
+
+<!-- MODAL META INDIVIDUAL -->
+<div class="mo" id="mMeta" style="display:none" onclick="if(event.target===this)fecharMetaModal()">
+<div class="mb" onclick="event.stopPropagation()">
+  <div class="mt"><span id="mMetaTit">Nova meta</span><button onclick="fecharMetaModal()" style="background:none;border:none;font-size:22px;cursor:pointer;color:var(--t2)">×</button></div>
+  <p style="font-size:12px;color:var(--t2);margin:0 0 6px">Nome</p>
+  <input id="mt_nome" placeholder="Ex: Viagem" style="margin-bottom:10px">
+  <div class="g2" style="margin-bottom:10px">
+    <div><p style="font-size:12px;color:var(--t2);margin:0 0 6px">Quem guarda</p>
+      <select id="mt_dono" style="width:100%;padding:10px;border-radius:var(--rs);border:0.5px solid var(--br);background:var(--card);color:var(--t1);font-family:inherit">
+        <option value="Jéssica">Jéssica</option>
+        <option value="Anderson">Anderson</option>
+      </select>
+    </div>
+    <div><p style="font-size:12px;color:var(--t2);margin:0 0 6px">Prazo</p><input id="mt_prazo" type="month"></div>
+  </div>
+  <div class="g2" style="margin-bottom:10px">
+    <div><p style="font-size:12px;color:var(--t2);margin:0 0 6px">Meta (R$)</p><input id="mt_meta" type="number" placeholder="50000"></div>
+    <div><p style="font-size:12px;color:var(--t2);margin:0 0 6px">Já guardado (R$)</p><input id="mt_saved" type="number" placeholder="0"></div>
+  </div>
+  <button class="btn btnp" onclick="salvarMeta()" style="margin-bottom:10px">Salvar</button>
+  <button id="btnDelMeta" onclick="deletarMeta()" style="display:none;width:100%;padding:11px;border-radius:var(--rs);border:0.5px solid #E86858;background:transparent;color:#E86858;cursor:pointer;font-size:14px;font-family:inherit">Excluir meta</button>
+</div>
+</div>
+
+<!-- MODAL APORTE META INDIVIDUAL -->
+<div class="mo" id="mAporteMeta" style="display:none" onclick="if(event.target===this)fecharAporteMeta()">
+<div class="mb" onclick="event.stopPropagation()">
+  <div class="mt"><span id="mAporteMetaTit">+ Guardar</span><button onclick="fecharAporteMeta()" style="background:none;border:none;font-size:22px;cursor:pointer;color:var(--t2)">×</button></div>
+  <p style="font-size:12px;color:var(--t2);margin:0 0 6px">Valor (R$)</p>
+  <input id="am_val" type="number" placeholder="Ex: 500" style="margin-bottom:14px">
+  <button class="btn btnp" onclick="confirmarAporteMeta()">Adicionar</button>
+</div>
+</div>
+
+<script>
+const SK = "nosdois-v6";
+
+// ─── DADOS ───────────────────────────────────────
+const FIXOS = [
+  {label:"🏗️ Terreno",         valor:2500},
+  {label:"💧 Água + Luz",       valor:170},
+  {label:"📺 Netflix",          valor:40},
+  {label:"🌐 Internet",         valor:100},
+  {label:"📡 TV por assinatura",valor:40},
+  {label:"🧹 Faxina",           valor:500},
+];
+const TOTAL_FIXOS = FIXOS.reduce((s,f)=>s+f.valor,0);
+
+const LIMITES = [
+  {id:"supermercado", label:"Supermercado",     emoji:"🛒", limite:1300, color:"#27AE60",  cartao:"Caju"},
+  {id:"gasolina",     label:"Gasolina",         emoji:"⛽", limite:600,  color:"#3B9EBF",  cartao:"Uniclass"},
+  {id:"luna",         label:"Luna ração/rem.",   emoji:"🐶", limite:400,  color:"#E05C8C",  cartao:"Uniclass"},
+  {id:"shopee",       label:"Shopee / Casa",     emoji:"🧺", limite:200,  color:"#7B6FF0",  cartao:"Uniclass"},
+  {id:"delivery",     label:"Delivery/Lazer",    emoji:"🍽️", limite:600,  color:"#3BAF7A",  cartao:"Uniclass"},
+  {id:"parcelas",     label:"Parcelas / Casa",   emoji:"🏠", limite:300,  color:"#D67A2F",  cartao:"Uniclass"},
+  {id:"outros",       label:"Outros",            emoji:"📦", limite:300,  color:"#888",     cartao:"Uniclass"},
+  {id:"anderson",     label:"Exclusivos Anderson",emoji:"👨", limite:300, color:"#4A90D9",  cartao:"Uniclass"},
+];
+
+const CX_RESERVA = [
+  {id:"emergencia", name:"Emergência",   emoji:"🆘", aporte:700,  meta:35000, color:"#3BAF7A"},
+  {id:"construcao", name:"Construção",   emoji:"🧱", aporte:500,  meta:50000, color:"#D67A2F"},
+  {id:"viagem",     name:"Viagem",       emoji:"✈️", aporte:400,  meta:10000, color:"#3B9EBF"},
+  {id:"luna_cx",    name:"Luna check-up",emoji:"🐶", aporte:150,  meta:1200,  color:"#E05C8C"},
+  {id:"ipva",       name:"IPVA carro",   emoji:"🚗", aporte:117,  meta:1400,  color:"#7B6FF0"},
+  {id:"iptu",       name:"IPTU",         emoji:"🏛️", aporte:29,   meta:350,   color:"#8B7BC8"},
+  {id:"gas",        name:"Gás",          emoji:"🔥", aporte:33,   meta:390,   color:"#888"},
+];
+const TOTAL_APORTES = CX_RESERVA.reduce((s,c)=>s+c.aporte,0);
+
+// ─── APORTE DA CAIXINHA NO MÊS ────────────────────
+// Respeita aporte 0 (não volta pro padrão) e a pausa: se a caixinha tiver
+// "voltaEm" (AAAA-MM), ela não entra no cálculo nos meses antes dessa data.
+function aporteBase(cx){
+  if(cx.aporte!=null && cx.aporte!=="") return Number(cx.aporte)||0;
+  const t=CX_RESERVA.find(x=>x.id===cx.id);
+  return t?t.aporte:0;
+}
+function cxPausada(cx,mes){return !!(cx.voltaEm && mes < cx.voltaEm);}
+function aporteDoMes(cx,mes){return cxPausada(cx,mes)?0:aporteBase(cx);}
+function fmtMesCurto(m){const [y,mm]=m.split("-");return mm+"/"+y;}
+
+// ─── CONTAS DO CASAL QUE O ANDERSON PAGA ─────────
+// O Anderson paga a parcela inteira; a metade da Jéssica é descontada
+// do que ele tem que transferir pra ela no mês.
+const CONTAS_ANDERSON_PAGA = [
+  {id:"eletros", label:"🔌 Eletros", parcela:397.60, total:8349.66, parcelas:21, inicio:"2026-10"},
+];
+function contasAndersonDoMes(mes){
+  return (D.contas_anderson||[]).map(c=>{
+    const [yi,mi]=c.inicio.split("-").map(Number);
+    const [ym,mm]=mes.split("-").map(Number);
+    const n=(ym-yi)*12+(mm-mi)+1; // nº da parcela nesse mês
+    return {...c, parcNum:n};
+  }).filter(c=>c.parcNum>=1&&c.parcNum<=c.parcelas);
+}
+
+const DEFAULT = {
+  gastos:[],
+  aportes:[], // histórico de aportes nas caixinhas
+  cx_reserva: CX_RESERVA.map(c=>({id:c.id,saved:0,name:c.name,emoji:c.emoji,aporte:c.aporte,meta:c.meta,color:c.color})),
+  cx_limites:  LIMITES.map(l=>({id:l.id,gasto:0,mes:""})),
+  fixos_check: {mes:"", pagos:[]},
+  reforma: {orcamento:0, itens:[]}, // itens: [{id,nome,planejado,gastos:[{id,desc,valor,date}]}]
+  metas_individuais: [
+    {id:"viagem2027", nome:"Viagem", emoji:"✈️", dono:"Jéssica", meta:50000, prazo:"2027-12", saved:0, color:"#3e6e8e", aportes:[]}
+  ],
+};
+
+// ─── STATE ───────────────────────────────────────
+let D = JSON.parse(JSON.stringify(DEFAULT));
+let tab = "inicio";
+let fl  = {desc:"",amount:"",cat:"supermercado",pessoa:"Casal",date:hoje(),type:"expense",note:""};
+let aporteCxId = null;
+let delId = null;
+let editCxId = null; // null = nova caixinha
+let editItemReformaId = null;
+let gastoReformaItemId = null;
+let editMetaId = null;
+let aporteMetaId = null;
+
+// ─── HELPERS ─────────────────────────────────────
+const BRL = v => new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL"}).format(v||0);
+const uid = () => Math.random().toString(36).slice(2,10);
+function hoje(){return new Date().toISOString().split("T")[0];}
+function svgDonut(pct,color,size,stroke){
+  size=size||120;stroke=stroke||14;
+  const r=(size-stroke)/2, c=2*Math.PI*r;
+  const dash=Math.max(0,Math.min(pct,100))/100*c;
+  return`<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+    <circle cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="var(--bg)" stroke-width="${stroke}"/>
+    <circle cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="${color}" stroke-width="${stroke}" stroke-linecap="round" stroke-dasharray="${dash} ${c}" transform="rotate(-90 ${size/2} ${size/2})" style="transition:stroke-dasharray .6s ease"/>
+  </svg>`;
+}
+
+// ─── CICLOS DE FATURA ─────────────────────────────
+// Caju: saldo cai todo dia 20 → ciclo vai de 21 do mês anterior até dia 20
+// Uniclass: fecha por volta do dia 26 → ciclo vai de 27 do mês anterior até dia 26
+function getCiclo(cartao, refDate){
+  const ref = refDate ? new Date(refDate+"T12:00:00") : new Date();
+  const diaFechamento = cartao === "Caju" ? 20 : 26;
+  let inicio, fim;
+  if(ref.getDate() > diaFechamento){
+    // já passou o fechamento deste mês — ciclo atual começou neste mês
+    inicio = new Date(ref.getFullYear(), ref.getMonth(), diaFechamento+1);
+    fim    = new Date(ref.getFullYear(), ref.getMonth()+1, diaFechamento);
+  } else {
+    // ainda não fechou — ciclo atual começou no mês anterior
+    inicio = new Date(ref.getFullYear(), ref.getMonth()-1, diaFechamento+1);
+    fim    = new Date(ref.getFullYear(), ref.getMonth(), diaFechamento);
+  }
+  return {inicio, fim};
+}
+function dataNoCiclo(dateStr, cartao, refDate){
+  if(!dateStr) return false;
+  const {inicio, fim} = getCiclo(cartao, refDate);
+  const d = new Date(dateStr+"T12:00:00");
+  return d>=inicio && d<=fim;
+}
+function fCiclo(cartao, refDate){
+  const {inicio, fim} = getCiclo(cartao, refDate);
+  const opt={day:"2-digit",month:"2-digit"};
+  return inicio.toLocaleDateString("pt-BR",opt)+" a "+fim.toLocaleDateString("pt-BR",opt);
+}
+function fData(d){return d?new Date(d+"T12:00:00").toLocaleDateString("pt-BR"):"";}
+function mesAtual(){const n=new Date();return n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0");}
+
+// ─── LANÇAMENTOS MIGRADOS DO CELULAR ─────────────
+const GASTOS_INICIAIS = [];
+
+// ─── FIREBASE CONFIG ─────────────────────────────
+// Banco de dados compartilhado — Jéssica e Anderson veem os mesmos dados
+const FB_URL = "https://nois-dois-casal-default-rtdb.firebaseio.com/dados.json";
+
+async function saveData(){
+  try{
+    await fetch(FB_URL,{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(D)});
+    const el=document.getElementById("si");
+    if(el)el.textContent="✓ "+new Date().toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"});
+  }catch(e){
+    // fallback localStorage se offline
+    try{localStorage.setItem(SK,JSON.stringify(D));}catch(e2){}
+    const el=document.getElementById("si");
+    if(el)el.textContent="⚠️ offline";
+  }
+}
+
+
+function cobrarAnderson(total,cartao,exclusivo,caixinhas,faxina,mesRef,mesId){
+  const contas=contasAndersonDoMes(mesId||mesFiltro);
+  const desconto=contas.reduce((s,c)=>s+c.parcela/2,0);
+  const num="5535991064069",apto=1250,tg=total+apto+caixinhas+faxina-desconto;
+  const blocoDesc=contas.length?("*Contas que você paga (desconto)*\n"
+    +contas.map(c=>"  "+c.label.replace(/^\S+\s/,"")+" "+c.parcNum+"/"+c.parcelas+": "+BRL(c.parcela)+"\n  Metade da Jéssica: -"+BRL(c.parcela/2)+"\n").join("")+"\n"):"";
+  const msg="Oi Anderson!\n\n*Resumo do mês — "+mesRef+"*\n\n"
+    +"━━━━━━━━━━━━━━━━━━━━\n"
+    +"*Cartão Uniclass*\n  Sua parte: "+BRL(cartao)+(exclusivo>0?" (÷2 + exclusivos)":"")+"\n  "
+    +(exclusivo>0?"Gastos exclusivos: "+BRL(exclusivo)+"\n  ":"")+"Pix Jéssica (Itaú)\n\n"
+    +"*Apartamento*\n  Sua parte: "+BRL(apto)+"\n  Transferência Caixa\n\n"
+    +"*Faxina*\n  Sua parte: "+BRL(faxina)+"\n  Pix Jéssica\n\n"
+    +"*Caixinhas de reserva*\n  Sua parte: "+BRL(caixinhas)+"\n  Pix Jéssica (Nubank)\n\n"
+    +blocoDesc
+    +"━━━━━━━━━━━━━━━━━━━━\n"
+    +"*Total do mês: "+BRL(tg)+"*\n"
+    +"  • Itaú (cartão): "+BRL(cartao)+"\n"
+    +"  • Nubank (caixinhas): "+BRL(caixinhas)+"\n"
+    +"  • Caixa (apartamento): "+BRL(apto)+"\n"
+    +"  • Faxina: "+BRL(faxina)+"\n"
+    +(desconto>0?"  • Desconto Eletros: -"+BRL(desconto)+"\n":"")+"\n"
+    +"Tudo até dia 31?";
+  window.open("https://wa.me/"+num+"?text="+encodeURIComponent(msg),"_blank");
+}
+function normDesc(s){return(s||"").toLowerCase().replace(/\s*\(\d+\/\d+\)\s*/g,"").replace(/[^a-z0-9]/gi," ").replace(/\s+/g," ").trim();}
+function similaridade(a,b){const wa=normDesc(a).split(" ").filter(Boolean),wb=normDesc(b).split(" ").filter(Boolean);if(!wa.length||!wb.length)return 0;return wa.filter(w=>wb.includes(w)).length/Math.max(wa.length,wb.length);}
+function varrerDuplicatas(){
+  const gastos=D.gastos.filter(g=>g.type==="expense"),grupos=[],usados=new Set();
+  for(let i=0;i<gastos.length;i++){
+    if(usados.has(i))continue;
+    const grupo=[gastos[i]];
+    for(let j=i+1;j<gastos.length;j++){
+      if(usados.has(j))continue;
+      const a=gastos[i],b=gastos[j];
+      if(Math.abs(a.amount-b.amount)>0.015||!a.date||!b.date||a.date.slice(0,7)!==b.date.slice(0,7))continue;
+      if(similaridade(a.desc,b.desc)>=0.45){grupo.push(b);usados.add(j);}
+    }
+    if(grupo.length>1){usados.add(i);grupos.push(grupo);}
+  }
+  if(grupos.length===0){alert("\u2705 Nenhuma duplicata encontrada!");return;}
+  const modal=document.createElement("div");
+  modal.style.cssText="position:fixed;inset:0;background:#0009;z-index:9000;display:flex;align-items:flex-end;justify-content:center";
+  modal.onclick=function(e){if(e.target===modal)modal.remove();};
+  let inner='<div style="background:var(--card);border-radius:20px 20px 0 0;padding:22px 18px 40px;width:100%;max-width:700px;max-height:85vh;overflow-y:auto">';
+  inner+='<div style="display:flex;justify-content:space-between;margin-bottom:16px"><span style="font-size:16px;font-weight:500">\uD83D\uDD0D '+grupos.length+' grupo(s) suspeito(s)</span><button id="_fecharDup" style="background:none;border:none;font-size:22px;cursor:pointer">\xd7</button></div>';
+  grupos.forEach((grupo,gi)=>{
+    inner+='<div style="margin-bottom:12px;border:0.5px solid #E8685860;border-radius:12px;padding:12px">';
+    inner+='<p style="font-size:11px;color:#E86858;font-weight:600;margin:0 0 8px">Grupo '+(gi+1)+' — '+BRL(grupo[0].amount)+'</p>';
+    grupo.forEach(g=>{
+      inner+='<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:0.5px solid var(--br)">';
+      inner+='<div style="flex:1;min-width:0"><p style="font-size:12px;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+g.desc+'</p>';
+      inner+='<p style="font-size:10px;color:var(--t2);margin:0">'+fData(g.date)+'</p></div>';
+      inner+='<button data-id="'+g.id+'" class="_dupDel" style="margin-left:8px;padding:4px 12px;border-radius:20px;background:#E8685820;color:#E86858;border:0.5px solid #E8685860;cursor:pointer;font-size:12px;font-family:inherit">\uD83D\uDDD1\uFE0F Remover</button>';
+      inner+='</div>';
+    });
+    inner+='</div>';
+  });
+  inner+='</div>';
+  modal.innerHTML=inner;
+  document.body.appendChild(modal);
+  document.getElementById("_fecharDup").onclick=()=>modal.remove();
+  modal.querySelectorAll("._dupDel").forEach(btn=>{
+    btn.onclick=()=>{confirmarDel(btn.dataset.id);modal.remove();};
+  });
+}
+
+async function loadData(){
+  // Não recarregar se estiver conferindo fatura (texto colado ou PDF anexado)
+  if(tab==="controle" && (_textoFaturaConferir || (_itensPDF && _itensPDF.length>0))) return;
+  const si=document.getElementById("si");
+  if(si)si.textContent="Carregando…";
+  try{
+    const r=await fetch(FB_URL+"?t="+Date.now());
+    if(r.ok){
+      const json=await r.json();
+      if(json){
+        // usa os dados do Firebase diretamente sem sobrescrever com DEFAULT
+        D=json;
+      }
+    }
+  }catch(e){
+    // Firebase falhou — usar localStorage só se não tiver dados na memória
+    if(!D.gastos || D.gastos.length===0){
+      try{
+        const s=localStorage.getItem(SK);
+        if(s){D=JSON.parse(s);}
+      }catch(e2){}
+    }
+  }
+  // garantir campos essenciais sem apagar dados existentes
+  if(!D.gastos)     D.gastos=[];
+  if(!D.categorias_extras) D.categorias_extras=[];
+  // Adicionar categorias extras ao LIMITES se não existirem
+  D.categorias_extras.forEach(c=>{
+    if(!LIMITES.find(l=>l.id===c.id)) LIMITES.push(c);
+  });
+  if(!D.aportes)    D.aportes=[];
+  if(!D.fixos_check) D.fixos_check={mes:"",pagos:[]};
+  if(!D.cx_limites) D.cx_limites=LIMITES.map(l=>({id:l.id,gasto:0,mes:""}));
+  // só inicializa cx_reserva se estiver completamente vazia
+  if(!D.cx_reserva||D.cx_reserva.length===0){
+    D.cx_reserva=CX_RESERVA.map(c=>({id:c.id,saved:0}));
+  }
+  // migração: Faxina saiu das caixinhas de reserva, agora entra como gasto fixo
+  if(D.cx_reserva){
+    const idxFax=D.cx_reserva.findIndex(c=>c.id==="faxina");
+    if(idxFax>-1){
+      const cxFax=D.cx_reserva[idxFax];
+      if((cxFax.saved||0)<=0){
+        D.cx_reserva.splice(idxFax,1); // nada guardado, remove direto
+      }else{
+        // tinha saldo guardado: mantém pra não perder o valor, mas zera o aporte mensal e marca como antiga
+        cxFax.aporte=0;
+        if(!/\(antiga\)/i.test(cxFax.name||"")) cxFax.name=(cxFax.name||"Faxina")+" (antiga)";
+      }
+    }
+  }
+  if(!D.contas_anderson) D.contas_anderson=[];
+  CONTAS_ANDERSON_PAGA.forEach(c=>{
+    if(!D.contas_anderson.find(x=>x.id===c.id)) D.contas_anderson.push({...c});
+  });
+  if(!D.reforma) D.reforma={orcamento:0, itens:[]};
+  if(!D.reforma.itens) D.reforma.itens=[];
+  if(!D.metas_individuais||D.metas_individuais.length===0){
+    D.metas_individuais=[{id:"viagem2027", nome:"Viagem", emoji:"✈️", dono:"Jéssica", meta:50000, prazo:"2027-12", saved:0, color:"#3e6e8e", aportes:[]}];
+  }
+  D.metas_individuais.forEach(m=>{ if(!m.aportes) m.aportes=[]; });
+  render();
+}
+
+// ─── FILTRO POR MÊS ──────────────────────────────
+let mesFiltro = mesAtual();
+let _textoFaturaConferir = localStorage.getItem("nosdois_conf_texto")||"";
+let _itensFatura = [];
+let _verTodosLancamentos = false;
+let _catsEscolhidas = {}; // salva cat escolhida por idx
+
+function fmtMes(mes){
+  return new Date(mes+"-01T12:00:00").toLocaleDateString("pt-BR",{month:"long",year:"numeric"});
+}
+function mesAnterior(mes){
+  const [y,m]=mes.split("-").map(Number);
+  const d=new Date(y,m-2,1);
+  return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0");
+}
+function mesProximo(mes){
+  const [y,m]=mes.split("-").map(Number);
+  const d=new Date(y,m,1);
+  return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0");
+}
+function irMesAnterior(){mesFiltro=mesAnterior(mesFiltro);render();}
+function irMesProximo(){mesFiltro=mesProximo(mesFiltro);render();}
+function gastosDoMes(mes,catId){
+  return D.gastos.filter(g=>g.type==="expense"&&g.date&&g.date.startsWith(mes)&&(!catId||g.cat===catId));
+}
+function dentroMes(dateStr,mes){
+  return dateStr&&dateStr.startsWith(mes);
+}
+
+// ─── TOAST ───────────────────────────────────────
+let tt;
+function showToast(msg,type){
+  const t=document.getElementById("toast");
+  const c={success:"#3BAF7A",warn:"#D67A2F",info:"#7B6FF0",danger:"#E86858"};
+  t.style.background=c[type]||"#7B6FF0";t.textContent=msg;t.style.opacity="1";
+  clearTimeout(tt);tt=setTimeout(()=>t.style.opacity="0",3500);
+}
+
+// ─── TABS ─────────────────────────────────────────
+const TABS=[
+  {id:"inicio",    emoji:"🏠", label:"Início"},
+  {id:"controle",  emoji:"💳", label:"Cartão"},
+  {id:"reservas",  emoji:"📦", label:"Reservas"},
+  {id:"reforma",   emoji:"🔨", label:"Reforma"},
+  {id:"metas",     emoji:"✈️", label:"Metas"},
+  {id:"graficos",  emoji:"📈", label:"Gráficos"},
+  {id:"historico", emoji:"📋", label:"Histórico"},
+];
+function renderTabs(){
+  document.getElementById("tabBar").innerHTML=TABS.map(t=>
+    `<button class="tab ${tab===t.id?"on":""}" onclick="switchTab('${t.id}')"><span class="ei">${t.emoji}</span>${t.label}</button>`
+  ).join("");
+  const ml=document.getElementById("mesLabel");
+  if(ml) ml.textContent=fmtMes(mesFiltro);
+}
+function switchTab(id){tab=id;delId=null;render();}
+
+// ─── RENDER ──────────────────────────────────────
+function render(){
+  renderTabs();
+  const c=document.getElementById("content");
+  if(tab==="inicio")    c.innerHTML=renderInicio();
+  if(tab==="controle"){
+    c.innerHTML=renderControle();
+    // Se tinha uma prévia de PDF pendente (ainda não importada/cancelada), redesenha ela
+    if(_itensPDF && _itensPDF.length>0){
+      exibirPreviewPDF(_itensPDF);
+    }
+  }
+  if(tab==="reservas")  c.innerHTML=renderReservas();
+  if(tab==="reforma")   c.innerHTML=renderReforma();
+  if(tab==="metas")     c.innerHTML=renderMetas();
+  if(tab==="historico") c.innerHTML=renderHistorico();
+  if(tab==="graficos")  c.innerHTML=renderGraficos();
+}
+
+// ══════════════════════════════════════════════
+// TELA 1 — INÍCIO
+// ══════════════════════════════════════════════
+function renderInicio(){
+  const mes    = mesFiltro;
+  const gastosM     = D.gastos.filter(g=>g.date&&g.date.startsWith(mes));
+  const totalGastoM = gastosM.filter(g=>g.type==="expense").reduce((s,g)=>s+g.amount,0);
+  const gUniM_        = gastosM.filter(g=>g.type==="expense"&&(g.cartao==="Uniclass"||LIMITES.find(l=>l.id===g.cat&&l.cartao==="Uniclass")));
+  const totalFaturaAnt = gUniM_.reduce((s,g)=>s+g.amount,0);
+  const excAnderson    = gUniM_.filter(g=>g.pessoa==="Anderson").reduce((s,g)=>s+g.amount,0);
+  const divisivel      = totalFaturaAnt - excAnderson;
+  const cotaJ          = divisivel / 2;
+  const cotaA          = divisivel / 2 + excAnderson;
+  const totalAporteCx  = D.cx_reserva.reduce((s,c)=>s+aporteDoMes(c,mes),0);
+  const cxPausadas     = D.cx_reserva.filter(c=>cxPausada(c,mes)&&aporteBase(c)>0);
+  const aporteCada     = totalAporteCx / 2;
+  const contasAnd      = contasAndersonDoMes(mes);
+  const descontoAnd    = contasAnd.reduce((s,c)=>s+c.parcela/2,0); // metade da Jéssica
+  const totalJ         = cotaJ + aporteCada;
+  const totalA         = cotaA + aporteCada - descontoAnd;
+  const temAnt         = totalFaturaAnt > 0;
+  const nomeMesAnt     = fmtMes(mes);
+  const fixosAtuais    = D.fixos||FIXOS;
+  const faxinaItem     = fixosAtuais.find(f=>/faxina/i.test(f.label));
+  const faxinaCota     = (faxinaItem?faxinaItem.valor:0) / 2;
+
+  return`
+  <p style="font-size:13px;color:var(--t2);margin:0 0 14px;text-transform:capitalize">${fmtMes(mes)}</p>
+
+  <!-- QUANTO CADA UM APORTA -->
+  <div class="card" style="border-color:#7B6FF050">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+      <p class="sec" style="margin:0">📅 Transferência — dia 31</p>
+      <span style="font-size:10px;color:var(--t2);background:var(--bg);padding:3px 8px;border-radius:20px">${temAnt?"base: "+nomeMesAnt:"sem dados"}</span>
+    </div>
+    <div class="g2" style="margin-bottom:12px">
+      <div style="background:#E05C8C10;border:0.5px solid #E05C8C40;border-radius:var(--r);padding:14px;text-align:center">
+        <p style="font-size:12px;color:#E05C8C;margin:0 0 4px">👩 Jéssica</p>
+        <p style="font-size:24px;font-weight:600;color:#E05C8C;margin:0 0 4px">${temAnt?BRL(totalJ):"—"}</p>
+        <p style="font-size:10px;color:var(--t2);margin:0">cartão ${BRL(cotaJ)} + cx ${BRL(aporteCada)}</p>
+      </div>
+      <div style="background:#3B9EBF10;border:0.5px solid #3B9EBF40;border-radius:var(--r);padding:14px;text-align:center">
+        <p style="font-size:12px;color:#3B9EBF;margin:0 0 4px">👨 Anderson</p>
+        <p style="font-size:24px;font-weight:600;color:#3B9EBF;margin:0 0 4px">${temAnt?BRL(totalA):"—"}</p>
+        <p style="font-size:10px;color:var(--t2);margin:0">cartão ${BRL(cotaA)} + cx ${BRL(aporteCada)}${descontoAnd>0?` − eletros ${BRL(descontoAnd)}`:""}</p>
+      </div>
+    </div>
+    ${contasAnd.length>0?`<div style="background:#3B9EBF10;border:0.5px solid #3B9EBF40;border-radius:var(--rs);padding:10px 14px;margin-bottom:10px">
+      <p style="font-size:12px;color:var(--t1);margin:0 0 6px;font-weight:500">Contas do casal que o Anderson paga</p>
+      ${contasAnd.map(c=>`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">
+        <span style="font-size:12px;color:var(--t2)">${c.label} · parcela ${c.parcNum}/${c.parcelas} de ${BRL(c.parcela)}</span>
+        <span style="font-size:12px;color:#3B9EBF;font-weight:500;white-space:nowrap;margin-left:8px">−${BRL(c.parcela/2)}</span>
+      </div>`).join("")}
+      <p style="font-size:10.5px;color:var(--t2);margin:4px 0 0">A metade da Jéssica já sai do total que o Anderson transfere.</p>
+    </div>`:""}
+    ${temAnt?`<div style="background:var(--bg);border-radius:var(--rs);padding:10px 14px;margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;margin-bottom:3px">
+        <span style="font-size:12px;color:var(--t2)">💜 Fatura ${nomeMesAnt}</span>
+        <span style="font-size:12px;font-weight:500">${BRL(totalFaturaAnt)}</span>
+      </div>
+      ${excAnderson>0?`<div style="display:flex;justify-content:space-between">
+        <span style="font-size:12px;color:var(--t2)">📦 Exclusivo Anderson</span>
+        <span style="font-size:12px;color:#D67A2F">-${BRL(excAnderson)}</span>
+      </div>`:""}
+    </div>`:""}
+    ${temAnt?`<button onclick="cobrarAnderson(${cotaA},${cotaA-excAnderson},${excAnderson},${aporteCada},${faxinaCota},'${nomeMesAnt}','${mes}')" style="width:100%;padding:12px;border-radius:var(--rs);border:none;background:#25D366;color:#fff;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:10px">🟢 Cobrar Anderson</button>`:""}
+    <div style="background:var(--bg);border-radius:var(--rs);padding:10px 14px">
+      <div style="display:flex;justify-content:space-between">
+        <span style="font-size:12px;color:var(--t2)">📦 Caixinhas (cada um)</span>
+        <span style="font-size:12px;font-weight:500;color:var(--pu)">${BRL(aporteCada)}/mês</span>
+      </div>
+      ${cxPausadas.length?`<p style="font-size:10.5px;color:var(--t2);margin:4px 0 0">⏸️ ${cxPausadas.length} pausada(s) neste mês: ${cxPausadas.map(c=>c.name).join(", ")}</p>`:""}
+    </div>
+  </div>
+
+  <!-- GASTOS FIXOS -->
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <p class="sec" style="margin:0">🏠 Gastos fixos do casal</p>
+      <button onclick="abrirNovoFixo()" style="font-size:11px;padding:4px 10px;border-radius:20px;border:0.5px solid var(--pu);color:var(--pu);background:transparent;cursor:pointer;font-family:inherit">+ Adicionar</button>
+    </div>
+    ${(()=>{
+      const fixos = D.fixos||FIXOS;
+      const totalFixos = fixos.reduce((s,f)=>s+f.valor,0);
+      const pagos = (D.fixos_check&&D.fixos_check.mes===mesFiltro)?(D.fixos_check.pagos||[]):[];
+      return `
+      ${fixos.map((f,i)=>{
+        const pago=pagos.includes(i);
+        return `<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:0.5px solid var(--br)">
+          <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0">
+            <button onclick="toggleFixo(${i})" style="width:26px;height:26px;border-radius:50%;border:1.5px solid ${pago?"#3BAF7A":"var(--br)"};background:${pago?"#3BAF7A":"transparent"};cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0">${pago?"✓":""}</button>
+            <span style="font-size:13px;color:${pago?"var(--t2)":"var(--t1)"};text-decoration:${pago?"line-through":"none"};flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${f.label}</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;margin-left:8px">
+            <strong style="font-size:13px;color:${pago?"var(--t2)":"var(--t1)"}">${BRL(f.valor)}</strong>
+            <button onclick="editarFixo(${i})" style="background:none;border:none;cursor:pointer;color:var(--t2);font-size:14px;padding:2px">✏️</button>
+            <button onclick="deletarFixo(${i})" style="background:none;border:none;cursor:pointer;color:#E86858;font-size:14px;padding:2px">🗑️</button>
+          </div>
+        </div>`;
+      }).join("")}
+      <div style="margin-top:10px;padding-top:10px;border-top:0.5px solid var(--br);display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:13px;color:var(--t2)">Total fixos</span>
+        <span style="font-size:18px;font-weight:500;color:#E86858">${BRL(totalFixos)}</span>
+      </div>
+      <div style="margin-top:8px;background:var(--bg);border-radius:var(--rs);padding:9px 13px;display:flex;justify-content:space-between">
+        <span style="font-size:12px;color:var(--t2)">Cada um entra com</span>
+        <span style="font-size:15px;font-weight:500;color:var(--pu)">${BRL(totalFixos/2)}</span>
+      </div>`;
+    })()}
+  </div>
+
+  <!-- MODAL FIXO -->
+  <div id="modalFixo" style="display:none;position:fixed;inset:0;background:#0008;z-index:999;align-items:center;justify-content:center">
+    <div style="background:var(--card);border-radius:var(--r);padding:20px;width:90%;max-width:340px;margin:auto">
+      <p class="sec" id="modalFixoTitulo" style="margin:0 0 14px">Novo fixo</p>
+      <input id="fixoLabel" placeholder="Nome (ex: 🌐 Internet)" style="width:100%;padding:10px 12px;border-radius:var(--rs);border:0.5px solid var(--br);background:var(--bg);color:var(--t1);font-size:14px;font-family:inherit;outline:none;margin-bottom:10px">
+      <input id="fixoValor" type="number" placeholder="Valor (ex: 100)" style="width:100%;padding:10px 12px;border-radius:var(--rs);border:0.5px solid var(--br);background:var(--bg);color:var(--t1);font-size:14px;font-family:inherit;outline:none;margin-bottom:14px">
+      <div style="display:flex;gap:8px">
+        <button onclick="fecharModalFixo()" style="flex:1;padding:10px;border-radius:var(--rs);border:0.5px solid var(--br);background:var(--bg);color:var(--t2);cursor:pointer;font-family:inherit">Cancelar</button>
+        <button onclick="salvarFixo()" style="flex:2;padding:10px;border-radius:var(--rs);border:none;background:var(--pu);color:#fff;font-weight:500;cursor:pointer;font-family:inherit">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUMO MÊS -->
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <p class="sec" style="margin:0">Gastos este mês</p>
+      <button class="btn" style="background:var(--pu);color:#fff;padding:8px 14px;font-size:13px" onclick="abrirLancar()">+ Lançar</button>
+    </div>
+    <div class="g2">
+      <div class="st"><p>Total lançado</p><h3 style="color:#E86858">${BRL(totalGastoM)}</h3></div>
+      <div class="st"><p>Lançamentos</p><h3>${gastosM.length}</h3></div>
+    </div>
+    ${LIMITES.map(l=>{
+      const cx=D.cx_limites.find(x=>x.id===l.id)||{gasto:0};
+      const gm=mes;
+      const gasto=D.gastos.filter(g=>g.cat===l.id&&g.date&&g.date.startsWith(gm)&&g.type==="expense").reduce((s,g)=>s+g.amount,0);
+      const pct=Math.min((gasto/l.limite)*100,100);
+      const over=gasto>l.limite;
+      const warn=!over&&pct>=80;
+      return`<div style="margin-top:12px">
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:13px;color:var(--t1)">${l.emoji} ${l.label}</span>
+          <span style="font-size:13px;font-weight:500;color:${over?"#E86858":warn?"#D67A2F":"var(--t1)"}">${BRL(gasto)}<span style="font-size:11px;color:var(--t2)"> /${BRL(l.limite)}</span></span>
+        </div>
+        <div class="bw"><div class="bf" style="width:${pct}%;background:${over?"#E86858":warn?"#D67A2F":l.color}"></div></div>
+        ${over?`<p style="font-size:11px;color:#E86858;margin:2px 0 0">🚨 Limite ultrapassado em ${BRL(gasto-l.limite)}</p>`:""}
+        ${warn?`<p style="font-size:11px;color:#D67A2F;margin:2px 0 0">⚠️ 80% do limite atingido</p>`:""}
+      </div>`;
+    }).join("")}
+  </div>`;
+}
+
+// ══════════════════════════════════════════════
+// TELA 2 — CONTROLE DO CARTÃO
+// ══════════════════════════════════════════════
+function renderControle(){
+  const limCaju = LIMITES.filter(l=>l.cartao==="Caju");
+  const limUni  = LIMITES.filter(l=>l.cartao==="Uniclass");
+  const gMes    = D.gastos.filter(g=>g.type==="expense"&&g.date&&g.date.startsWith(mesFiltro));
+  const gCajuM  = gMes.filter(g=>limCaju.find(l=>l.id===g.cat));
+  const gUniM   = gMes.filter(g=>limUni.find(l=>l.id===g.cat));
+  const ehMesAtual = mesFiltro===mesAtual();
+
+  function blocoLimite(l, gasto){
+    const pct=Math.min((gasto/l.limite)*100,100);
+    const over=gasto>l.limite;
+    const warn=!over&&pct>=80;
+    const itens=D.gastos.filter(g=>g.cat===l.id&&g.type==="expense"&&g.date&&g.date.startsWith(mesFiltro)).sort((a,b)=>new Date(b.date)-new Date(a.date));
+    const elId="cat_"+l.id+"_itens";
+    return`
+    <div class="card" style="border-color:${over?"#E8685860":warn?"#D67A2F60":"var(--br)"}">
+      <div onclick="const el=document.getElementById('${elId}');el.style.display=el.style.display==='none'?'block':'none'" style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;cursor:pointer">
+        <div>
+          <p style="font-size:20px;margin:0 0 2px">${l.emoji}</p>
+          <p style="font-size:14px;font-weight:500;color:var(--t1);margin:0 0 1px">${l.label}</p>
+          <p style="font-size:11px;color:var(--t2);margin:0">Limite: ${BRL(l.limite)} · ${itens.length} lanç. ▾</p>
+        </div>
+        <div style="text-align:right">
+          <p style="font-size:20px;font-weight:500;color:${over?"#E86858":l.color};margin:0 0 2px">${BRL(gasto)}</p>
+          <p style="font-size:11px;color:${over?"#E86858":"var(--t2)"};margin:0">${over?"excedeu":"restam"} ${BRL(Math.abs(l.limite-gasto))}</p>
+        </div>
+      </div>
+      <div class="cx-bar">
+        <div style="height:100%;width:${pct}%;background:${over?"#E86858":warn?"#D67A2F":l.color};border-radius:10px;transition:width .5s"></div>
+        ${pct>15?`<span style="position:absolute;left:8px;top:50%;transform:translateY(-50%);font-size:10px;color:#fff;font-weight:500">${Math.round(pct)}%</span>`:""}
+      </div>
+      ${over?`<p style="font-size:12px;color:#E86858;margin:4px 0 8px;font-weight:500">🚨 Ultrapassou ${BRL(gasto-l.limite)}</p>`:""}
+      ${warn?`<p style="font-size:12px;color:#D67A2F;margin:4px 0 8px">⚠️ 80% do limite usado</p>`:""}
+      ${!over&&!warn?`<p style="font-size:12px;color:var(--t2);margin:4px 0 8px">Restam ${BRL(l.limite-gasto)}</p>`:""}
+      <div id="${elId}" style="display:none;border-top:0.5px solid var(--br);padding-top:8px;margin-bottom:8px">
+        ${itens.length===0?`<p style="font-size:12px;color:var(--t2);text-align:center;padding:8px 0">Nenhum lançamento</p>`:itens.map(g=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:0.5px solid var(--br)"><div style="flex:1;min-width:0"><p style="font-size:12px;font-weight:500;color:var(--t1);margin:0 0 1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${g.desc}</p><p style="font-size:10px;color:var(--t2);margin:0">${fData(g.date)}${g.parcelado?" · 📦 "+g.parcNum+"/"+g.parcTotal:""}</p></div><select onclick="event.stopPropagation()" onchange="event.stopPropagation();moverCategoria('${g.id}',this.value)" title="Mudar categoria" style="font-size:13px;padding:2px;border-radius:8px;border:0.5px solid var(--br);background:var(--bg);color:var(--t2);margin-right:6px;font-family:inherit">${LIMITES.filter(x=>x.cartao===l.cartao).map(x=>`<option value="${x.id}"${x.id===g.cat?" selected":""}>${x.emoji}</option>`).join("")}</select><span style="font-size:13px;font-weight:500;color:#E86858;flex-shrink:0">-${BRL(g.amount)}</span></div>`).join("")}
+      </div>
+      ${ehMesAtual?`<button class="btn" style="background:${l.color}18;color:${l.color};border:0.5px solid ${l.color}50;width:100%;padding:8px;font-size:13px;font-weight:500" onclick="event.stopPropagation();abrirLancarCat('${l.id}')">+ Lançar ${l.label}</button>`:""}
+    </div>`;
+  }
+
+  return`
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+    <p class="sec" style="margin:0">💳 Controle do cartão</p>
+    ${ehMesAtual?`<button class="btn" style="background:var(--pu);color:#fff;padding:8px 14px;font-size:13px" onclick="abrirLancar()">+ Lançar</button>`:""}
+  </div>
+
+  <!-- CAJU -->
+  <div style="background:#27AE6012;border:0.5px solid #27AE6040;border-radius:var(--r);padding:10px 14px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center">
+    <span style="font-size:13px;color:#27AE60;font-weight:500">💚 Caju</span>
+    <span style="font-size:13px;color:#27AE60">${BRL(gCajuM.reduce((s,g)=>s+g.amount,0))} / ${BRL(limCaju.reduce((s,l)=>s+l.limite,0))}</span>
+  </div>
+  ${limCaju.map(l=>blocoLimite(l, gCajuM.filter(g=>g.cat===l.id).reduce((s,g)=>s+g.amount,0))).join("")}
+
+  <!-- UNICLASS -->
+  <div style="background:#7B6FF012;border:0.5px solid #7B6FF040;border-radius:var(--r);padding:10px 14px;margin-bottom:10px;margin-top:6px;display:flex;justify-content:space-between;align-items:center">
+    <span style="font-size:13px;color:#7B6FF0;font-weight:500">💜 Uniclass</span>
+    <span style="font-size:13px;color:#7B6FF0">${BRL(gUniM.reduce((s,g)=>s+g.amount,0))} / ${BRL(limUni.reduce((s,l)=>s+l.limite,0))}</span>
+  </div>
+  ${limUni.map(l=>blocoLimite(l, gUniM.filter(g=>g.cat===l.id).reduce((s,g)=>s+g.amount,0))).join("")}
+
+  <!-- ÚLTIMOS LANÇAMENTOS -->
+  <div class="card" style="margin-top:6px">
+    <p class="sec">${_verTodosLancamentos?"Todos os lançamentos":"Últimos lançamentos"}${gMes.length>0?` (${gMes.length})`:""}</p>
+    ${gMes.length===0
+      ?`<p style="font-size:13px;color:var(--t2);text-align:center;padding:20px 0">Nenhum lançamento em ${fmtMes(mesFiltro)}</p>`
+      :gMes.sort((a,b)=>new Date(b.criadoEm||b.date)-new Date(a.criadoEm||a.date)).slice(0,_verTodosLancamentos?gMes.length:8).map(g=>{
+        const l=LIMITES.find(x=>x.id===g.cat);
+        return`<div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:0.5px solid var(--br)">
+          <span style="font-size:20px;flex-shrink:0">${l?l.emoji:"📦"}</span>
+          <div style="flex:1;min-width:0">
+            <p style="margin:0 0 2px;font-size:13px;font-weight:500;color:var(--t1);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${g.desc}</p>
+            <span style="font-size:11px;color:var(--t2)">${fData(g.date)} · <span style="color:${g.cartao==="Caju"?"#27AE60":"#7B6FF0"}">${g.cartao||"Uniclass"}</span>${g.parcelado?` · 📦${g.parcNum}/${g.parcTotal}`:""}</span>
+          </div>
+          <select onchange="moverCategoria('${g.id}',this.value)" title="Mudar categoria" style="font-size:13px;padding:2px;border-radius:8px;border:0.5px solid var(--br);background:var(--bg);color:var(--t2);flex-shrink:0;font-family:inherit">${LIMITES.filter(x=>x.cartao===(g.cartao||"Uniclass")).map(x=>`<option value="${x.id}"${x.id===g.cat?" selected":""}>${x.emoji}</option>`).join("")}</select>
+          <span style="font-size:14px;font-weight:500;color:#E86858;flex-shrink:0">-${BRL(g.amount)}</span>
+        </div>`;
+      }).join("")}
+    ${gMes.length>8?`<button onclick="_verTodosLancamentos=!_verTodosLancamentos;render()" style="width:100%;margin-top:10px;padding:8px;border-radius:var(--rs);border:0.5px solid var(--br);background:transparent;color:var(--pu);font-size:12px;cursor:pointer;font-family:inherit">${_verTodosLancamentos?"Mostrar menos":`Ver todos (${gMes.length})`}</button>`:""}
+  </div>
+
+  <!-- ANEXAR PDF DA FATURA -->
+  <p class="sec" style="margin-top:14px">📎 Anexar PDF da fatura (Itaú)</p>
+  <div class="card">
+    <p style="font-size:12px;color:var(--t2);margin:0 0 10px;line-height:1.5">Envie o PDF da fatura baixado no app do Itaú. Se estiver protegido por senha, o app pede antes de ler. Os lançamentos aparecem um por um pra você conferir a categoria e importar.</p>
+    <label style="display:block;border:1.5px dashed var(--br);border-radius:var(--r);padding:24px 16px;text-align:center;cursor:pointer;background:var(--bg)">
+      <span style="font-size:28px;display:block;margin-bottom:6px">📄</span>
+      <p style="font-size:13px;font-weight:500;color:var(--t1);margin:0 0 2px">Selecionar PDF da fatura</p>
+      <p style="font-size:11px;color:var(--t2);margin:0">Toque para escolher o arquivo</p>
+      <input type="file" accept="application/pdf" style="display:none" onchange="importarFaturaPDF(this)">
+    </label>
+    <div id="pdfResult" style="margin-top:12px"></div>
+  </div>`;
+}
+
+// ══════════════════════════════════════════════
+// TELA 3 — CAIXINHAS DE RESERVA
+// ══════════════════════════════════════════════
+function evolucaoReservas(){
+  const aportes=[...(D.aportes||[])].filter(a=>a.date).sort((a,b)=>new Date(a.date)-new Date(b.date));
+  if(!aportes.length) return [];
+  const porMes={};
+  aportes.forEach(a=>{
+    const m=a.date.slice(0,7);
+    porMes[m]=(porMes[m]||0)+a.amount;
+  });
+  const meses=Object.keys(porMes).sort();
+  let acc=0;
+  return meses.map(m=>{ acc+=porMes[m]; return {mes:m, aportado:porMes[m], acumulado:acc}; });
+}
+
+function renderEvolucaoReservas(){
+  const ev=evolucaoReservas();
+  if(!ev.length) return "";
+  const maxAcc=Math.max(...ev.map(e=>e.acumulado));
+  const linhas=[...ev].reverse(); // mês mais recente primeiro
+  return`
+  <div class="card" id="evolucaoCard" style="margin-bottom:14px">
+    <div onclick="const b=document.getElementById('evolucaoBody');b.style.display=b.style.display==='none'?'block':'none'" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer">
+      <p class="sec" style="margin:0">📈 Evolução mês a mês</p>
+      <span style="font-size:11px;color:var(--t2)">${ev.length} ${ev.length===1?"mês":"meses"} ▾</span>
+    </div>
+    <div id="evolucaoBody" style="margin-top:12px">
+      ${linhas.map(e=>{
+        const pct=maxAcc>0?Math.max(4,(e.acumulado/maxAcc)*100):0;
+        return`<div style="margin-bottom:11px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px">
+            <span style="font-size:12.5px;color:var(--t1);text-transform:capitalize;font-weight:500">${fmtMes(e.mes)}</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;color:var(--gr)">${BRL(e.acumulado)}</span>
+          </div>
+          <div class="bw"><div class="bf" style="width:${pct}%;background:var(--gr)"></div></div>
+          <p style="font-size:10.5px;color:var(--t2);margin:3px 0 0;font-family:'IBM Plex Mono',monospace">+${BRL(e.aportado)} aportado nesse mês</p>
+        </div>`;
+      }).join("")}
+      <p style="font-size:10.5px;color:var(--t3);margin-top:6px">Baseado nos aportes registrados. Edições manuais do "valor guardado" (✏️) não entram nessa linha do tempo.</p>
+    </div>
+  </div>`;
+}
+
+function renderReservas(){
+  const totalSaved=D.cx_reserva.reduce((s,c)=>s+(c.saved||0),0);
+  const totalAportes=D.cx_reserva.reduce((s,c)=>s+aporteDoMes(c,mesFiltro),0);
+  return`
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <p class="sec" style="margin:0">📦 Caixinhas de reserva</p>
+    <button onclick="abrirCxModal(null)" style="padding:8px 14px;border-radius:var(--rs);border:0.5px solid var(--br);background:var(--card);color:var(--t1);cursor:pointer;font-size:13px;font-family:inherit">+ Nova</button>
+  </div>
+  <div class="card" style="background:#3BAF7A08;border-color:#3BAF7A40;margin-bottom:14px">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div><p style="font-size:12px;color:var(--t2);margin:0 0 3px">Total guardado</p>
+      <p style="font-size:26px;font-weight:500;color:#3BAF7A;margin:0">${BRL(totalSaved)}</p></div>
+      <div style="text-align:right"><p style="font-size:12px;color:var(--t2);margin:0 0 3px">Aporte mensal total</p>
+      <p style="font-size:16px;font-weight:500;color:var(--pu);margin:0">${BRL(totalAportes)}</p>
+      <p style="font-size:11px;color:var(--t2);margin:2px 0 0">cada um: ${BRL(totalAportes/2)}</p></div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:8px;margin-bottom:14px">
+    <button onclick="pausarTodasCx()" style="flex:1;padding:9px;border-radius:var(--rs);border:0.5px solid #D67A2F60;background:#D67A2F12;color:#D67A2F;cursor:pointer;font-size:12.5px;font-weight:500;font-family:inherit">⏸️ Pausar todas</button>
+    ${D.cx_reserva.some(c=>c.voltaEm)?`<button onclick="retomarTodasCx()" style="flex:1;padding:9px;border-radius:var(--rs);border:0.5px solid var(--br);background:var(--bg);color:var(--t2);cursor:pointer;font-size:12.5px;font-family:inherit">▶️ Retomar todas</button>`:""}
+  </div>
+
+  ${renderEvolucaoReservas()}
+
+  ${D.cx_reserva.map(cx=>{
+    const tmpl=CX_RESERVA.find(c=>c.id===cx.id)||{};
+    const name=cx.name||tmpl.name||"Caixinha";
+    const emoji=cx.emoji||tmpl.emoji||"📦";
+    const aporte=aporteBase(cx);
+    const pausada=cxPausada(cx,mesFiltro);
+    const meta=cx.meta||tmpl.meta||0;
+    const color=cx.color||tmpl.color||"#888";
+    const saved=cx.saved||0;
+    const pct=meta>0?Math.min((saved/meta)*100,100):0;
+    const atingida=meta>0&&saved>=meta;
+    const mesesRestantes=meta>0&&saved<meta&&aporte>0?Math.ceil((meta-saved)/aporte):0;
+    return`
+    <div class="card" style="border-color:${atingida?color:"var(--br)"}">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+        <div>
+          <p style="font-size:24px;margin:0 0 2px">${emoji}</p>
+          <p style="font-size:15px;font-weight:500;color:var(--t1);margin:0 0 2px">${name}</p>
+          <p style="font-size:11px;color:var(--t2);margin:0">Aporte: ${BRL(aporte)}/mês · cada um: ${BRL(aporte/2)}</p>
+          ${pausada?`<p style="font-size:11px;color:#D67A2F;margin:3px 0 0;font-weight:500">⏸️ Pausada · volta em ${fmtMesCurto(cx.voltaEm)}</p>`:""}
+        </div>
+        <div style="text-align:right">
+          <p style="font-size:22px;font-weight:500;color:${color};margin:0 0 2px">${BRL(saved)}</p>
+          ${meta>0?`<p style="font-size:11px;color:var(--t2);margin:0">meta: ${BRL(meta)}</p>`:""}
+        </div>
+      </div>
+      ${meta>0?`
+      <div class="cx-bar">
+        <div style="height:100%;width:${pct}%;background:${color};border-radius:10px;transition:width .5s"></div>
+        ${pct>12?`<span style="position:absolute;left:8px;top:50%;transform:translateY(-50%);font-size:10px;color:#fff;font-weight:500">${Math.round(pct)}%</span>`:""}
+      </div>
+      ${atingida
+        ?`<p style="font-size:13px;color:${color};font-weight:500;margin:0 0 10px">🎉 Meta atingida!</p>`
+        :`<p style="font-size:12px;color:var(--t2);margin:0 0 10px">Faltam ${BRL(meta-saved)}${mesesRestantes>0?" · ~"+mesesRestantes+" meses":""}</p>`}`
+      :`<p style="font-size:12px;color:var(--t2);margin:0 0 10px">Sem meta definida</p>`}
+      <div style="display:flex;gap:8px">
+        <button onclick="abrirAporte('${cx.id}')" style="flex:1;padding:8px;border-radius:var(--rs);background:${color}18;color:${color};border:0.5px solid ${color}50;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit">+ Aportar</button>
+        <button onclick="abrirCxModal('${cx.id}')" style="padding:8px 14px;border-radius:var(--rs);background:var(--bg);color:var(--t2);border:0.5px solid var(--br);cursor:pointer;font-size:13px;font-family:inherit">✏️</button>
+      </div>
+    </div>`;
+  }).join("")}`;
+}
+
+// ══════════════════════════════════════════════
+// TELA 3B — REFORMA (temporária)
+// ══════════════════════════════════════════════
+function renderReforma(){
+  const R = D.reforma || {orcamento:0, itens:[]};
+  const itens = R.itens||[];
+  const totalGasto = itens.reduce((s,i)=>s+(i.gastos||[]).reduce((s2,g)=>s2+g.valor,0),0);
+  const orcamento = R.orcamento||0;
+  const saldo = orcamento - totalGasto;
+  const pct = orcamento>0 ? Math.min(100,(totalGasto/orcamento)*100) : 0;
+  const corBarra = pct>=100?"var(--rd)":pct>=80?"var(--or)":"var(--gr)";
+  const ITC = "#3e6e8e";
+
+  return`
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+      <p class="sec" style="margin:0">🔨 Reforma</p>
+      <div style="display:flex;gap:6px">
+        <button onclick="abrirOrcamentoReforma()" style="background:none;border:0.5px solid var(--br);border-radius:8px;cursor:pointer;color:var(--t2);font-size:12px;padding:5px 10px">✏️ Orçamento</button>
+        <button onclick="encerrarReforma()" title="Remove todo o módulo de reforma quando não precisar mais dele" style="background:none;border:0.5px solid #E8685850;border-radius:8px;cursor:pointer;color:#E86858;font-size:12px;padding:5px 10px">🗑️ Encerrar</button>
+      </div>
+    </div>
+    <div class="g2" style="margin-bottom:10px">
+      <div class="st"><p>Orçamento total</p><h3>${BRL(orcamento)}</h3></div>
+      <div class="st"><p>Gasto até agora</p><h3 style="color:${orcamento>0&&totalGasto>orcamento?"var(--rd)":"var(--t1)"}">${BRL(totalGasto)}</h3></div>
+    </div>
+    ${orcamento>0?`
+    <div class="bw"><div class="bf" style="width:${pct}%;background:${corBarra}"></div></div>
+    <p style="font-size:11px;color:var(--t2);margin:4px 0 0">${saldo>=0?BRL(saldo)+" restantes":BRL(-saldo)+" acima do orçamento"} · ${pct.toFixed(0)}%</p>
+    `:`<p style="font-size:12px;color:var(--t2)">Defina um orçamento total pra acompanhar quanto falta.</p>`}
+  </div>
+
+  <div style="display:flex;justify-content:space-between;align-items:center;margin:16px 0 10px">
+    <p class="sec" style="margin:0">Itens do orçamento</p>
+    <button onclick="abrirItemReforma()" style="background:var(--pu);color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:12px;padding:6px 12px;font-weight:500">+ Item</button>
+  </div>
+
+  ${itens.length===0?`<div class="card" style="text-align:center;color:var(--t2);font-size:13px;padding:24px">Nenhum item ainda. Adiciona uma categoria (ex: Piso, Pintura, Elétrica) pra começar a controlar.</div>`:
+  itens.map(it=>{
+    const gastoItem=(it.gastos||[]).reduce((s,g)=>s+g.valor,0);
+    const planejado=it.planejado||0;
+    const pctItem=planejado>0?Math.min(100,(gastoItem/planejado)*100):0;
+    const corItem=pctItem>=100?"var(--rd)":pctItem>=80?"var(--or)":ITC;
+    return`
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
+        <div>
+          <p style="font-size:14px;font-weight:600;color:var(--t1);margin:0">${it.nome}</p>
+          <p style="font-size:11px;color:var(--t2);margin:2px 0 0">Planejado: ${BRL(planejado)}</p>
+        </div>
+        <div style="text-align:right">
+          <p style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:600;color:${planejado>0&&gastoItem>planejado?"var(--rd)":"var(--t1)"};margin:0">${BRL(gastoItem)}</p>
+          <p style="font-size:10.5px;color:var(--t2);margin:0">gasto</p>
+        </div>
+      </div>
+      ${planejado>0?`<div class="bw"><div class="bf" style="width:${pctItem}%;background:${corItem}"></div></div>`:""}
+      ${(it.gastos||[]).length>0?`
+      <div style="margin:10px 0 4px">
+        ${it.gastos.map(g=>`<div class="fr" style="font-size:12px;cursor:pointer" onclick="abrirGastoReforma('${it.id}','${g.id}')"><span>${g.desc||"Gasto"} · ${fData(g.date)}</span><strong>${BRL(g.valor)} ✏️</strong></div>`).join("")}
+      </div>`:""}
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button onclick="abrirGastoReforma('${it.id}')" style="flex:1;padding:8px;border-radius:var(--rs);background:${ITC}18;color:${ITC};border:0.5px solid ${ITC}50;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit">+ Gasto</button>
+        <button onclick="abrirItemReforma('${it.id}')" style="padding:8px 14px;border-radius:var(--rs);background:var(--bg);color:var(--t2);border:0.5px solid var(--br);cursor:pointer;font-size:13px;font-family:inherit">✏️</button>
+      </div>
+    </div>`;
+  }).join("")}`;
+}
+
+function abrirOrcamentoReforma(){
+  document.getElementById("ref_orcamento").value=D.reforma?.orcamento||"";
+  document.getElementById("mOrcRef").style.display="flex";
+}
+function fecharOrcamentoReforma(){document.getElementById("mOrcRef").style.display="none";}
+function salvarOrcamentoReforma(){
+  const v=parseFloat(document.getElementById("ref_orcamento").value)||0;
+  if(!D.reforma) D.reforma={orcamento:0,itens:[]};
+  D.reforma.orcamento=v;
+  saveData();fecharOrcamentoReforma();showToast("✅ Orçamento atualizado!","success");render();
+}
+
+function abrirItemReforma(id){
+  editItemReformaId=id||null;
+  const it=id?(D.reforma.itens||[]).find(i=>i.id===id):null;
+  document.getElementById("mItemRefTit").textContent=id?"Editar item":"Novo item";
+  document.getElementById("ir_nome").value=it?.nome||"";
+  document.getElementById("ir_planejado").value=it?.planejado||"";
+  document.getElementById("btnDelItemRef").style.display=id?"block":"none";
+  document.getElementById("mItemRef").style.display="flex";
+}
+function fecharItemReforma(){document.getElementById("mItemRef").style.display="none";}
+function salvarItemReforma(){
+  const nome=document.getElementById("ir_nome").value.trim();
+  if(!nome){showToast("Informe o nome do item","warn");return;}
+  const planejado=parseFloat(document.getElementById("ir_planejado").value)||0;
+  if(!D.reforma) D.reforma={orcamento:0,itens:[]};
+  if(!D.reforma.itens) D.reforma.itens=[];
+  if(editItemReformaId){
+    D.reforma.itens=D.reforma.itens.map(i=>i.id===editItemReformaId?{...i,nome,planejado}:i);
+    showToast("✅ Item atualizado!","success");
+  }else{
+    D.reforma.itens.push({id:uid(),nome,planejado,gastos:[]});
+    showToast("✅ Item adicionado!","success");
+  }
+  saveData();fecharItemReforma();render();
+}
+function deletarItemReforma(){
+  if(!editItemReformaId)return;
+  if(!confirm("Excluir este item e todos os gastos registrados nele?"))return;
+  D.reforma.itens=D.reforma.itens.filter(i=>i.id!==editItemReformaId);
+  saveData();fecharItemReforma();showToast("🗑️ Item excluído","info");render();
+}
+
+let editGastoReformaId = null;
+function abrirGastoReforma(itemId,gastoId){
+  gastoReformaItemId=itemId;
+  editGastoReformaId=gastoId||null;
+  const it=(D.reforma.itens||[]).find(i=>i.id===itemId);
+  const g=gastoId?(it?.gastos||[]).find(x=>x.id===gastoId):null;
+  document.getElementById("mGastoRefTit").textContent=gastoId?"Editar gasto":"+ Gasto em "+(it?.nome||"item");
+  document.getElementById("gr_desc").value=g?.desc||"";
+  document.getElementById("gr_valor").value=g?.valor||"";
+  document.getElementById("btnSalvarGastoRef").textContent=gastoId?"Salvar":"Adicionar";
+  document.getElementById("btnDelGastoRef").style.display=gastoId?"block":"none";
+  document.getElementById("mGastoRef").style.display="flex";
+  setTimeout(()=>document.getElementById("gr_valor").focus(),100);
+}
+function fecharGastoReforma(){document.getElementById("mGastoRef").style.display="none";editGastoReformaId=null;}
+function confirmarGastoReforma(){
+  const v=parseFloat(document.getElementById("gr_valor").value)||0;
+  if(!v)return;
+  const desc=document.getElementById("gr_desc").value.trim();
+  const idx=D.reforma.itens.findIndex(i=>i.id===gastoReformaItemId);
+  if(idx<0)return;
+  if(!D.reforma.itens[idx].gastos) D.reforma.itens[idx].gastos=[];
+  if(editGastoReformaId){
+    D.reforma.itens[idx].gastos=D.reforma.itens[idx].gastos.map(g=>g.id===editGastoReformaId?{...g,desc,valor:v}:g);
+    showToast(`✅ Gasto atualizado!`,"success");
+  }else{
+    D.reforma.itens[idx].gastos.unshift({id:uid(),desc,valor:v,date:hoje()});
+    showToast(`💸 ${BRL(v)} registrados!`,"success");
+  }
+  saveData();fecharGastoReforma();render();
+}
+function excluirGastoReforma(){
+  if(!editGastoReformaId)return;
+  if(!confirm("Excluir este gasto?"))return;
+  const idx=D.reforma.itens.findIndex(i=>i.id===gastoReformaItemId);
+  if(idx<0)return;
+  D.reforma.itens[idx].gastos=(D.reforma.itens[idx].gastos||[]).filter(g=>g.id!==editGastoReformaId);
+  saveData();fecharGastoReforma();showToast("🗑️ Gasto excluído","info");render();
+}
+function encerrarReforma(){
+  if(!confirm("Isso remove todo o módulo de reforma: orçamento, itens e gastos registrados. Não dá pra desfazer. Continuar?"))return;
+  D.reforma={orcamento:0,itens:[]};
+  saveData();showToast("🗑️ Reforma encerrada e removida","info");render();
+}
+
+// ══════════════════════════════════════════════
+// TELA 3C — METAS INDIVIDUAIS
+// ══════════════════════════════════════════════
+function mesesAte(prazoStr){
+  if(!prazoStr) return null;
+  const [y,m]=prazoStr.split("-").map(Number);
+  const now=new Date();
+  return (y-now.getFullYear())*12 + (m-1-now.getMonth());
+}
+function fmtPrazo(prazoStr){
+  if(!prazoStr) return "";
+  const [y,m]=prazoStr.split("-").map(Number);
+  return new Date(y,m-1,1).toLocaleDateString("pt-BR",{month:"long",year:"numeric"});
+}
+function renderMetas(){
+  const metas = D.metas_individuais||[];
+  return`
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+    <p class="sec" style="margin:0">✈️ Metas individuais</p>
+    <button onclick="abrirMetaModal()" style="background:var(--pu);color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:12px;padding:6px 12px;font-weight:500">+ Nova meta</button>
+  </div>
+  <p style="font-size:11.5px;color:var(--t2);margin:0 0 14px">Cada meta aqui é individual — só a pessoa dona guarda pra ela, não entra na divisão do casal.</p>
+
+  ${metas.length===0?`<div class="card" style="text-align:center;color:var(--t2);font-size:13px;padding:24px">Nenhuma meta ainda.</div>`:
+  metas.map(m=>{
+    const saved=m.saved||0, meta=m.meta||0;
+    const pct=meta>0?Math.min(100,(saved/meta)*100):0;
+    const color=m.color||"#3e6e8e";
+    const mr=mesesAte(m.prazo);
+    const atingida=meta>0 && saved>=meta;
+    const sugestao=(!atingida && meta>0 && mr!==null && mr>0)?((meta-saved)/mr):null;
+    return`
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:20px">${m.emoji||"🎯"}</span>
+          <div><p style="font-size:14px;font-weight:600;color:var(--t1);margin:0">${m.nome}</p><p style="font-size:11px;color:var(--t2);margin:0">${m.dono}${m.prazo?" · até "+fmtPrazo(m.prazo):""}</p></div>
+        </div>
+        <div style="text-align:right"><p style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:600;color:${color};margin:0">${BRL(saved)}</p>${meta>0?`<p style="font-size:10.5px;color:var(--t2);margin:0">de ${BRL(meta)}</p>`:""}</div>
+      </div>
+      ${meta>0?`<div class="bw"><div class="bf" style="width:${pct}%;background:${color}"></div></div>`:""}
+      ${atingida
+        ?`<p style="font-size:13px;color:${color};font-weight:500;margin:8px 0 10px">🎉 Meta atingida!</p>`
+        :meta>0?`<p style="font-size:12px;color:var(--t2);margin:8px 0 10px">Faltam ${BRL(meta-saved)}${mr!==null&&mr>0?" · "+mr+" meses":mr===0?" · é esse mês!":mr!==null&&mr<0?" · prazo já passou":""}${sugestao?" · sugestão: "+BRL(sugestao)+"/mês":""}</p>`
+        :`<p style="font-size:12px;color:var(--t2);margin:8px 0 10px">Sem meta de valor definida</p>`}
+      <div style="display:flex;gap:8px">
+        <button onclick="abrirAporteMeta('${m.id}')" style="flex:1;padding:8px;border-radius:var(--rs);background:${color}18;color:${color};border:0.5px solid ${color}50;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit">+ Guardar</button>
+        <button onclick="abrirMetaModal('${m.id}')" style="padding:8px 14px;border-radius:var(--rs);background:var(--bg);color:var(--t2);border:0.5px solid var(--br);cursor:pointer;font-size:13px;font-family:inherit">✏️</button>
+      </div>
+    </div>`;
+  }).join("")}`;
+}
+
+function abrirMetaModal(id){
+  editMetaId=id||null;
+  const m=id?(D.metas_individuais||[]).find(x=>x.id===id):null;
+  document.getElementById("mMetaTit").textContent=id?"Editar meta":"Nova meta";
+  document.getElementById("mt_nome").value=m?.nome||"";
+  document.getElementById("mt_dono").value=m?.dono||"Jéssica";
+  document.getElementById("mt_prazo").value=m?.prazo||"";
+  document.getElementById("mt_meta").value=m?.meta||"";
+  document.getElementById("mt_saved").value=m?.saved||0;
+  document.getElementById("btnDelMeta").style.display=id?"block":"none";
+  document.getElementById("mMeta").style.display="flex";
+}
+function fecharMetaModal(){document.getElementById("mMeta").style.display="none";}
+function salvarMeta(){
+  const nome=document.getElementById("mt_nome").value.trim();
+  if(!nome){showToast("Informe o nome da meta","warn");return;}
+  const dono=document.getElementById("mt_dono").value;
+  const prazo=document.getElementById("mt_prazo").value;
+  const meta=parseFloat(document.getElementById("mt_meta").value)||0;
+  const saved=parseFloat(document.getElementById("mt_saved").value)||0;
+  if(!D.metas_individuais) D.metas_individuais=[];
+  if(editMetaId){
+    D.metas_individuais=D.metas_individuais.map(m=>m.id===editMetaId?{...m,nome,dono,prazo,meta,saved}:m);
+    showToast("✅ Meta atualizada!","success");
+  }else{
+    D.metas_individuais.push({id:uid(),nome,emoji:"🎯",dono,prazo,meta,saved,color:"#3e6e8e",aportes:[]});
+    showToast("✅ Meta criada!","success");
+  }
+  saveData();fecharMetaModal();render();
+}
+function deletarMeta(){
+  if(!editMetaId)return;
+  if(!confirm("Excluir esta meta?"))return;
+  D.metas_individuais=D.metas_individuais.filter(m=>m.id!==editMetaId);
+  saveData();fecharMetaModal();showToast("🗑️ Meta excluída","info");render();
+}
+
+function abrirAporteMeta(id){
+  aporteMetaId=id;
+  const m=(D.metas_individuais||[]).find(x=>x.id===id);
+  document.getElementById("mAporteMetaTit").textContent="+ Guardar para "+(m?.nome||"meta");
+  document.getElementById("am_val").value="";
+  document.getElementById("mAporteMeta").style.display="flex";
+  setTimeout(()=>document.getElementById("am_val").focus(),100);
+}
+function fecharAporteMeta(){document.getElementById("mAporteMeta").style.display="none";}
+function confirmarAporteMeta(){
+  const v=parseFloat(document.getElementById("am_val").value)||0;
+  if(!v)return;
+  const idx=D.metas_individuais.findIndex(x=>x.id===aporteMetaId);
+  if(idx<0)return;
+  D.metas_individuais[idx].saved=(D.metas_individuais[idx].saved||0)+v;
+  if(!D.metas_individuais[idx].aportes) D.metas_individuais[idx].aportes=[];
+  D.metas_individuais[idx].aportes.unshift({id:uid(),amount:v,date:hoje(),criadoEm:new Date().toISOString()});
+  const m=D.metas_individuais[idx];
+  if(m.meta>0 && m.saved>=m.meta) showToast("🎉 Meta de "+m.nome+" atingida!","success");
+  else showToast(`💰 ${BRL(v)} guardados!`,"success");
+  saveData();fecharAporteMeta();render();
+}
+
+// ══════════════════════════════════════════════
+// TELA 4 — FATURA / UPLOAD
+// ══════════════════════════════════════════════
+function renderFatura(){
+  const mes=mesAtual();
+  // só mês atual — parcelas futuras não contam no limite do mês
+  const gastosM=D.gastos.filter(g=>g.date&&g.date.startsWith(mes));
+  const totalR=gastosM.filter(g=>g.type==="income").reduce((s,g)=>s+g.amount,0);
+
+  // separar por cartão
+  const limCaju     = LIMITES.filter(l=>l.cartao==="Caju");
+  const limUniclass = LIMITES.filter(l=>l.cartao==="Uniclass");
+
+  const totalCaju     = gastosM.filter(g=>g.type==="expense"&&limCaju.find(l=>l.id===g.cat)).reduce((s,g)=>s+g.amount,0);
+  const totalUniclass = gastosM.filter(g=>g.type==="expense"&&limUniclass.find(l=>l.id===g.cat)).reduce((s,g)=>s+g.amount,0);
+  const outros        = gastosM.filter(g=>g.type==="expense"&&!LIMITES.find(l=>l.id===g.cat)).reduce((s,g)=>s+g.amount,0);
+  const totalD        = totalCaju+totalUniclass+outros;
+
+  const metaCaju=1300;
+  const metaUniclass=1600; // gasolina600+luna400+shopee200+delivery600 - supermercado está no Caju
+  const okCaju=totalCaju<=metaCaju;
+  const okUni=totalUniclass<=metaUniclass;
+
+  function cartaoBlock(nome,emoji,cor,limites,total,meta){
+    const pct=Math.min((total/meta)*100,100);
+    const ok=total<=meta;
+    const cats=limites.map(l=>({
+      ...l,
+      gasto:gastosM.filter(g=>g.cat===l.id&&g.type==="expense").reduce((s,g)=>s+g.amount,0)
+    })).filter(c=>c.gasto>0);
+    return`
+    <div class="card" style="border-color:${ok?cor+"50":"#E8685850"}">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <div>
+          <p style="font-size:13px;font-weight:500;color:var(--t1);margin:0 0 2px">${emoji} Cartão ${nome}</p>
+          <p style="font-size:11px;color:var(--t2);margin:0">Meta: ${BRL(meta)}</p>
+        </div>
+        <div style="text-align:right">
+          <p style="font-size:22px;font-weight:500;color:${ok?cor:"#E86858"};margin:0 0 2px">${BRL(total)}</p>
+          <p style="font-size:11px;color:${ok?"#3BAF7A":"#E86858"};margin:0">${ok?"✅ ok — sobram "+BRL(meta-total):"🚨 acima em "+BRL(total-meta)}</p>
+        </div>
+      </div>
+      <div class="bw" style="height:10px"><div class="bf" style="width:${pct}%;background:${ok?cor:"#E86858"}"></div></div>
+      <p style="font-size:11px;color:var(--t2);margin:4px 0 ${cats.length>0?"12px":"0px"}">${Math.round(pct)}% da meta</p>
+      ${cats.map(c=>{
+        const p=Math.min((c.gasto/c.limite)*100,100);
+        const ov=c.gasto>c.limite;
+        return`<div style="margin-bottom:10px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:3px">
+            <span style="font-size:12px;color:var(--t1)">${c.emoji} ${c.label}</span>
+            <span style="font-size:12px;font-weight:500;color:${ov?"#E86858":c.color}">${BRL(c.gasto)}<span style="font-size:11px;color:var(--t2)"> /${BRL(c.limite)}</span></span>
+          </div>
+          <div class="bw" style="height:5px"><div class="bf" style="width:${p}%;background:${ov?"#E86858":c.color}"></div></div>
+        </div>`;
+      }).join("")}
+    </div>`;
+  }
+
+  return`
+  <p class="sec">📄 Análise da fatura</p>
+
+  <!-- RESUMO GERAL -->
+  <div class="g3" style="margin-bottom:12px">
+    <div class="st"><p>Total gasto</p><h3 style="color:#E86858">${BRL(totalD)}</h3></div>
+    <div class="st"><p>Receitas</p><h3 style="color:#3BAF7A">${BRL(totalR)}</h3></div>
+    <div class="st"><p>Lançamentos</p><h3>${gastosM.length}</h3></div>
+  </div>
+
+  <!-- CAJU -->
+  ${cartaoBlock("Caju","💚","#27AE60",limCaju,totalCaju,metaCaju)}
+
+  <!-- UNICLASS -->
+  ${cartaoBlock("Uniclass","💜","#7B6FF0",limUniclass,totalUniclass,metaUniclass)}
+
+  ${outros>0?`<div class="card"><div class="fr"><span>📦 Outros / Fixos</span><strong>${BRL(outros)}</strong></div></div>`:""}
+
+  <!-- IMPORTAR CSV -->
+  <div class="card">
+    <p class="sec">📂 Importar extrato do Itaú</p>
+    <p class="sub">Baixe o CSV no app do Itaú → Extrato → Exportar, e importe aqui para conferir</p>
+    <label style="display:block;border:1.5px dashed var(--br);border-radius:var(--r);padding:28px 16px;text-align:center;cursor:pointer;background:var(--bg)">
+      <span style="font-size:32px;display:block;margin-bottom:8px">📂</span>
+      <p style="font-size:14px;font-weight:500;color:var(--t1);margin:0 0 3px">Selecionar CSV do Itaú</p>
+      <p style="font-size:12px;color:var(--t2);margin:0">Toque para escolher o arquivo</p>
+      <input type="file" accept=".csv,.txt" style="display:none" onchange="handleCSV(this)">
+    </label>
+  </div>`;
+}
+
+// ══════════════════════════════════════════════
+// TELA 6 — GRÁFICOS
+// ══════════════════════════════════════════════
+function renderGraficos(){
+  const mes=mesFiltro;
+  const gMes=D.gastos.filter(g=>g.type==="expense"&&dentroMes(g.date,mes));
+
+  const porCat=LIMITES.map(l=>{
+    const gasto=gMes.filter(g=>g.cat===l.id).reduce((s,g)=>s+g.amount,0);
+    return{...l,gasto,pct:l.limite>0?Math.min((gasto/l.limite)*100,100):0,over:gasto>l.limite};
+  });
+  const totalLimite=LIMITES.reduce((s,l)=>s+l.limite,0);
+  const totalGasto=porCat.reduce((s,c)=>s+c.gasto,0);
+  const totalSobra=totalLimite-totalGasto;
+  const pctGeral=totalLimite>0?Math.min((totalGasto/totalLimite)*100,100):0;
+  const corGeral=totalSobra<0?"#E86858":(pctGeral>=80?"#D67A2F":"#3BAF7A");
+  const catsOrdenadas=[...porCat].sort((a,b)=>b.pct-a.pct);
+
+  // reservas
+  const totalSaved=D.cx_reserva.reduce((s,c)=>{
+    const t=CX_RESERVA.find(x=>x.id===c.id);
+    return (t?t.meta:c.meta)>0 ? s+(c.saved||0) : s;
+  },0);
+  const totalMeta=D.cx_reserva.reduce((s,c)=>{
+    const t=CX_RESERVA.find(x=>x.id===c.id);
+    return s+(t?t.meta:(c.meta||0));
+  },0);
+  const pctCx=totalMeta>0?Math.min((totalSaved/totalMeta)*100,100):0;
+
+  return`
+  <p class="sec">📈 ${fmtMes(mes)} — Visão geral</p>
+
+  <div class="card" style="display:flex;align-items:center;gap:18px">
+    <div style="position:relative;flex-shrink:0;width:120px;height:120px">
+      ${svgDonut(pctGeral,corGeral,120,14)}
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
+        <span style="font-size:19px;font-weight:600;color:${corGeral}">${Math.round(pctGeral)}%</span>
+        <span style="font-size:9px;color:var(--t2)">usado</span>
+      </div>
+    </div>
+    <div style="flex:1;min-width:0">
+      <p style="font-size:11px;color:var(--t2);margin:0 0 2px">${totalSobra>=0?"Ainda dá pra gastar":"Já excedeu em"}</p>
+      <p style="font-size:23px;font-weight:600;color:${corGeral};margin:0 0 8px">${BRL(Math.abs(totalSobra))}</p>
+      <p style="font-size:11px;color:var(--t2);margin:0">Gasto: <strong style="color:var(--t1)">${BRL(totalGasto)}</strong> de ${BRL(totalLimite)} planejado</p>
+    </div>
+  </div>
+
+  <p class="sec" style="margin-top:4px">Por categoria — quanto ainda tem</p>
+  <div class="card" style="padding:14px 16px">
+    ${catsOrdenadas.map(c=>`
+    <div style="margin-bottom:14px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;gap:8px">
+        <span style="font-size:12px;color:var(--t1);white-space:nowrap">${c.emoji} ${c.label} <span style="color:var(--t2);font-size:10px">· ${c.cartao}</span></span>
+        <span style="font-size:12px;font-weight:500;color:${c.over?"#E86858":c.color};white-space:nowrap">${c.over?"🚨 excedeu "+BRL(c.gasto-c.limite):"restam "+BRL(c.limite-c.gasto)}</span>
+      </div>
+      <div class="bw" style="height:9px"><div class="bf" style="width:${c.pct}%;background:${c.over?"#E86858":c.color}"></div></div>
+      <p style="font-size:10px;color:var(--t2);margin:3px 0 0">${BRL(c.gasto)} de ${BRL(c.limite)} (${Math.round(c.pct)}%)</p>
+    </div>`).join("")}
+  </div>
+
+  ${totalMeta>0?`
+  <p class="sec" style="margin-top:4px">📦 Reservas — progresso geral</p>
+  <div class="card" style="display:flex;align-items:center;gap:18px">
+    <div style="position:relative;flex-shrink:0;width:100px;height:100px">
+      ${svgDonut(pctCx,"#7B6FF0",100,12)}
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+        <span style="font-size:16px;font-weight:600;color:#7B6FF0">${Math.round(pctCx)}%</span>
+      </div>
+    </div>
+    <div style="flex:1;min-width:0">
+      <p style="font-size:11px;color:var(--t2);margin:0 0 2px">Guardado até agora</p>
+      <p style="font-size:18px;font-weight:600;color:#7B6FF0;margin:0 0 4px">${BRL(totalSaved)}</p>
+      <p style="font-size:11px;color:var(--t2);margin:0">Meta total: ${BRL(totalMeta)}</p>
+    </div>
+  </div>`:""}`;
+}
+
+// ══════════════════════════════════════════════
+// TELA 5 — HISTÓRICO
+// ══════════════════════════════════════════════
+function renderHistorico(){
+  const meses=[...new Set(D.gastos.map(g=>g.date?g.date.slice(0,7):null).filter(Boolean))].sort().reverse();
+  const mes=meses[0]||mesAtual();
+  // juntar gastos + aportes no histórico
+  const aportes=(D.aportes||[]).map(a=>({...a,_isAporte:true}));
+  const todos=[...D.gastos,...aportes].sort((a,b)=>new Date(b.criadoEm||b.date||0)-new Date(a.criadoEm||a.date||0));
+
+  return`
+  <p class="sec">📋 Histórico completo</p>
+  <div style="display:flex;justify-content:flex-end;gap:8px;margin-bottom:8px;flex-wrap:wrap">
+    <button onclick="abrirReorganizarFaturas()" style="font-size:11px;padding:5px 12px;border-radius:20px;border:0.5px solid var(--pu);background:var(--pu);color:#fff;cursor:pointer;font-family:inherit;font-weight:500">🗓️ Reorganizar faturas importadas</button>
+    ${D.backup_reorg?`<button onclick="desfazerReorganizacao()" style="font-size:11px;padding:5px 12px;border-radius:20px;border:0.5px solid var(--br);background:transparent;color:var(--t2);cursor:pointer;font-family:inherit">↶ Desfazer reorganização</button>`:""}
+    <button onclick="voltarImportadosUmMes()" style="font-size:11px;padding:5px 12px;border-radius:20px;border:0.5px solid #D67A2F;background:transparent;color:#D67A2F;cursor:pointer;font-family:inherit">↩️ Voltar fatura importada 1 mês</button>
+    <button onclick="corrigirCategoriasFatura()" style="font-size:11px;padding:5px 12px;border-radius:20px;border:0.5px solid #3BAF7A;background:transparent;color:#3BAF7A;cursor:pointer;font-family:inherit">🔧 Corrigir categorias da fatura</button>
+    <button onclick="varrerDuplicatas()" style="font-size:11px;padding:5px 12px;border-radius:20px;border:0.5px solid #E86858;background:transparent;color:#E86858;cursor:pointer;font-family:inherit">🔍 Detectar duplicatas</button>
+    <button onclick="restaurarJunho2026()" style="font-size:11px;padding:5px 12px;border-radius:20px;border:0.5px solid #7B6FF0;background:transparent;color:#7B6FF0;cursor:pointer;font-family:inherit">🔄 Restaurar junho/2026</button>
+    <button onclick="if(confirm('Deletar TODOS os lançamentos de junho/2026?')){D.gastos=D.gastos.filter(g=>!dentroMes(g.date,mesFiltro));saveData();render();}" style="font-size:11px;padding:5px 12px;border-radius:20px;border:0.5px solid #E86858;background:transparent;color:#E86858;cursor:pointer;font-family:inherit">🗑️ Limpar junho/2026</button>
+  </div>
+  ${todos.length===0?`
+  <div style="text-align:center;padding:48px 0;color:var(--t2)">
+    <p style="font-size:36px;margin:0 0 12px">📋</p>
+    <p style="font-size:13px">Nenhum lançamento ainda.</p>
+  </div>`:`
+  <div class="card" style="padding:0;overflow:hidden">
+    ${todos.map((g,idx)=>{
+      if(g._isAporte){
+        // linha de aporte em caixinha
+        return`<div style="display:flex;align-items:center;gap:10px;padding:11px 14px;border-bottom:${idx<todos.length-1?"0.5px solid var(--br)":"none"}">
+          <span style="font-size:20px;flex-shrink:0">${g.cxEmoji||"📦"}</span>
+          <div style="flex:1;min-width:0">
+            <p style="margin:0 0 2px;font-size:13px;font-weight:500;color:var(--t1)">Aporte · ${g.cxName}</p>
+            <span style="font-size:11px;color:var(--t2)">${fData(g.date)} · <span style="color:${g.cxColor||"#888"};font-weight:500">Reserva</span></span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+            <span style="font-size:14px;font-weight:500;color:#3BAF7A">+${BRL(g.amount)}</span>
+            ${delId===g.id
+              ?`<div style="display:flex;gap:5px">
+                  <button onclick="confirmarDelAporte('${g.id}')" style="padding:4px 8px;border-radius:6px;background:#E86858;color:#fff;border:none;cursor:pointer;font-size:11px">Sim</button>
+                  <button onclick="delId=null;render()" style="padding:4px 8px;border-radius:6px;background:var(--bg);color:var(--t2);border:0.5px solid var(--br);cursor:pointer;font-size:11px">Não</button>
+                </div>`
+              :`<button onclick="delId='${g.id}';render()" style="background:none;border:none;cursor:pointer;color:var(--t2);padding:4px;font-size:16px">🗑️</button>`}
+          </div>
+        </div>`;
+      }
+      const l=LIMITES.find(x=>x.id===g.cat);
+      const emoji=l?l.emoji:"📦";
+      const color=l?l.color:"#888";
+      return`<div style="display:flex;align-items:center;gap:10px;padding:11px 14px;border-bottom:${idx<todos.length-1?"0.5px solid var(--br)":"none"}">
+        <span style="font-size:20px;flex-shrink:0">${emoji}</span>
+        <div style="flex:1;min-width:0">
+          <p style="margin:0 0 2px;font-size:13px;font-weight:500;color:var(--t1);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${g.desc}</p>
+          <span style="font-size:11px;color:var(--t2)">${fData(g.date)} · ${g.pessoa||"Casal"}${g.cartao?` · <span style="color:${g.cartao==="Caju"?"#27AE60":"#7B6FF0"};font-weight:500">${g.cartao}</span>`:""}${g.parcelado?` · <span style="color:#D67A2F">📦 ${g.parcNum}/${g.parcTotal}</span>`:""}${g.importado?" · Itaú":""}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+          <span style="font-size:14px;font-weight:500;color:${g.type==="income"?"#3BAF7A":"#E86858"}">${g.type==="income"?"+":"-"}${BRL(g.amount)}</span>
+          ${delId===g.id
+            ?`<div style="display:flex;gap:5px">
+                <button onclick="confirmarDel('${g.id}')" style="padding:4px 8px;border-radius:6px;background:#E86858;color:#fff;border:none;cursor:pointer;font-size:11px">Sim</button>
+                <button onclick="delId=null;render()" style="padding:4px 8px;border-radius:6px;background:var(--bg);color:var(--t2);border:0.5px solid var(--br);cursor:pointer;font-size:11px">Não</button>
+              </div>`
+            :`<button onclick="delId='${g.id}';render()" style="background:none;border:none;cursor:pointer;color:var(--t2);padding:4px;font-size:16px">🗑️</button>`}
+        </div>
+      </div>`;
+    }).join("")}
+  </div>`}`;
+}
+
+
+function limparConferencia(){
+  _textoFaturaConferir=""; _itensFatura=[]; _catsEscolhidas={};
+  localStorage.removeItem("nosdois_conf_texto");
+  const el=document.getElementById("faturaResult");
+  if(el) el.innerHTML="";
+  const ta=document.getElementById("faturaConferirTexto");
+  if(ta) ta.value="";
+}
+
+function lancarDaFatura(itemId, btn){
+  const item=_itensFatura.find(i=>i.id===itemId);
+  if(!item) return;
+  const cat=document.getElementById("cat_fatura_"+itemId)?.value || _catsEscolhidas[itemId] || catPDF(item.desc).cat;
+  const pessoa=document.getElementById("pessoa_fatura_"+itemId)?.value || "Casal";
+  delete _catsEscolhidas[itemId];
+  // Lança sempre dentro do mês que você está vendo no app (mesFiltro), só aproveitando o dia do item.
+  // Assim ele sempre alimenta a categoria do mês atual e some da lista de pendentes.
+  const [diaBruto]=item.data.split("/");
+  const [anoM,mesM]=mesFiltro.split("-");
+  const diasNoMes=new Date(+anoM,+mesM,0).getDate();
+  const dia=String(Math.min(parseInt(diaBruto,10)||1,diasNoMes)).padStart(2,"0");
+  D.gastos.push({id:uid(),desc:item.desc,amount:item.valor,cat,cartao:"Uniclass",date:`${anoM}-${mesM}-${dia}`,type:"expense",pessoa,criadoEm:new Date().toISOString()});
+  saveData();
+  // render() reprocessa a fatura colada: o item recém-lançado já bate com o D.gastos
+  // e some sozinho da lista, e os cartões de limite por categoria já atualizam.
+  render();
+}
+
+function conferirFatura(){
+  const texto=(document.getElementById("faturaConferirTexto")?.value||"").trim()||_textoFaturaConferir;
+  const el=document.getElementById("faturaResult");
+  if(!el) return;
+  if(!texto){el.innerHTML=`<p style="font-size:13px;color:#E86858;text-align:center;padding:12px">⚠️ Cole os lançamentos primeiro.</p>`;return;}
+  _textoFaturaConferir=texto;
+  localStorage.setItem("nosdois_conf_texto",texto);
+
+  // Extrair itens da fatura (aceita "27/04: Shopee — R$ 56,30" OU "23/12   SAMSUNG NO ITA 21/21   119,00")
+  const itensBrutos=[];
+  const linhasTexto=texto.split(/\n+/);
+  for(const linhaRaw of linhasTexto){
+    const linha=linhaRaw.trim();
+    if(!linha) continue;
+    const dm=linha.match(/^(\d{2})\/(\d{2})/);
+    if(!dm) continue;
+    let resto=linha.slice(dm[0].length).replace(/^[:\s]+/,"");
+    // pega o último número em formato de dinheiro (com vírgula decimal) na linha — evita confundir com "21/21" etc.
+    const valores=[...resto.matchAll(/(-?)\s*(?:R\$\s*)?(\d{1,3}(?:\.\d{3})*,\d{2})(?!\d)/g)];
+    if(!valores.length) continue;
+    const ultimo=valores[valores.length-1];
+    const negativo=ultimo[1]==="-";
+    const valor=parseFloat(ultimo[2].replace(/\./g,"").replace(",","."))*(negativo?-1:1);
+    if(valor===0||Math.abs(valor)>50000) continue;
+    let desc=resto.slice(0,ultimo.index).trim();
+    desc=desc.replace(/[:\-—–]\s*$/,"").replace(/\s+/g," ").trim();
+    if(!desc) continue;
+    if(/total|subtotal|saldo|pagamento|vencimento|^cart[aã]o|final \d/i.test(desc)) continue;
+    itensBrutos.push({id:`${dm[1]}${dm[2]}_${desc}_${ultimo[2]}`.replace(/\s+/g,"_"),data:`${dm[1]}/${dm[2]}`,desc,valor,estorno:negativo});
+  }
+  if(itensBrutos.length===0){el.innerHTML=`<p style="font-size:13px;color:#E86858;text-align:center;padding:12px">❌ Nenhum lançamento reconhecido.</p>`;return;}
+
+  // O que já foi lançado no app esse mês (evita duplicar se colar a mesma fatura de novo)
+  const gastosMes=D.gastos.filter(g=>g.type==="expense"&&dentroMes(g.date,mesFiltro)&&(g.cartao==="Uniclass"||LIMITES.find(l=>l.id===g.cat&&l.cartao==="Uniclass")));
+  const appUsados=new Set();
+  const pendentes=itensBrutos.filter(fItem=>{
+    if(fItem.estorno) return true; // estornos só são exibidos, não são lançados
+    const vF=Math.round(fItem.valor*100);
+    for(let i=0;i<gastosMes.length;i++){
+      if(appUsados.has(i)) continue;
+      if(Math.round(gastosMes[i].amount*100)===vF){appUsados.add(i);return false;}
+    }
+    return true;
+  });
+
+  _itensFatura=pendentes;
+
+  const totalFatura=itensBrutos.filter(i=>!i.estorno).reduce((s,i)=>s+i.valor,0);
+  const totalRestante=pendentes.filter(i=>!i.estorno).reduce((s,i)=>s+i.valor,0);
+  const totalLancado=totalFatura-totalRestante;
+  const pendentesLancar=pendentes.filter(i=>!i.estorno);
+  const estornos=pendentes.filter(i=>i.estorno);
+
+  let html=`<div style="margin-top:4px">
+    <div class="resumo-conf" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
+      <div class="st"><p>Total fatura</p><h3 style="color:#E86858">${BRL(totalFatura)}</h3></div>
+      <div class="st"><p>Já lançado</p><h3 style="color:#3BAF7A">${BRL(totalLancado)}</h3></div>
+      <div class="st"><p>Restam</p><h3 style="color:#D67A2F">${BRL(totalRestante)}</h3></div>
+    </div>`;
+
+  if(pendentesLancar.length>0){
+    html+=`<p style="font-size:12px;font-weight:600;color:var(--t2);margin:0 0 8px">📥 ${pendentesLancar.length} item(ns) pra lançar:</p>`;
+    pendentesLancar.forEach(item=>{
+      const cat=_catsEscolhidas[item.id]||catPDF(item.desc).cat;
+      html+=`<div id="fatura_row_${item.id}" style="padding:8px 0;border-bottom:0.5px solid var(--br)">
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+          <span style="font-size:12px;color:var(--t1);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${item.data} · ${item.desc}</span>
+          <strong style="color:#E86858;white-space:nowrap;margin-left:8px;font-size:13px">-${BRL(item.valor)}</strong>
+        </div>
+        <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+          <select id="cat_fatura_${item.id}" onchange="_catsEscolhidas['${item.id}']=this.value" style="flex:1;min-width:100px;font-size:11px;padding:4px 8px;border-radius:20px;border:0.5px solid var(--br);background:var(--bg);color:var(--t1);font-family:inherit">
+            ${LIMITES.filter(l=>l.cartao==="Uniclass").map(l=>`<option value="${l.id}"${cat===l.id?" selected":""}>${l.emoji} ${l.label}</option>`).join("")}
+          </select>
+          <select id="pessoa_fatura_${item.id}" title="De quem é esse gasto" onchange="if(this.value==='Anderson'){const c=document.getElementById('cat_fatura_${item.id}');if(c){c.value='anderson';_catsEscolhidas['${item.id}']='anderson';}}" style="font-size:11px;padding:4px 6px;border-radius:20px;border:0.5px solid var(--br);background:var(--bg);color:var(--t1);font-family:inherit">
+            <option value="Casal">👫 Casal</option>
+            <option value="Jéssica">👩 Só Jéssica</option>
+            <option value="Anderson">👨 Só Anderson</option>
+          </select>
+          <button onclick="lancarDaFatura('${item.id}',this)" style="padding:4px 12px;border-radius:20px;background:var(--pu);color:#fff;border:none;font-size:12px;font-weight:500;cursor:pointer;font-family:inherit">+ Lançar</button>
+        </div>
+      </div>`;
+    });
+  }
+
+  if(estornos.length>0){
+    html+=`<p style="font-size:12px;font-weight:600;color:#3BAF7A;margin:12px 0 8px">↩️ Estornos identificados:</p>`;
+    estornos.forEach(item=>{
+      html+=`<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:0.5px solid var(--br);font-size:12px">
+        <span style="color:#3BAF7A">${item.data} · ${item.desc}</span>
+        <span style="color:#3BAF7A;white-space:nowrap;margin-left:8px">+${BRL(Math.abs(item.valor))}</span>
+      </div>`;
+    });
+  }
+
+  if(pendentesLancar.length===0&&estornos.length===0){
+    html+=`<div class="alr" style="background:#3BAF7A12;border:0.5px solid #3BAF7A40">✅ <span style="color:var(--t2)">Tudo já foi lançado!</span></div>`;
+  }
+
+  html+=`</div>`;
+  el.innerHTML=html;
+  el.dataset.tf=totalFatura;
+}
+
+function moverCategoria(id,novaCat){
+  if(!novaCat) return;
+  const g=D.gastos.find(x=>x.id===id);
+  if(!g) return;
+  g.cat=novaCat; saveData(); render();
+}
+
+function corrigirCategoriasFatura(){
+  if(!confirm("Isso corrige os lançamentos do 99 e a doação da paróquia (movendo pra Outros) e a compra da Samsung (movendo pra categoria Exclusivos Anderson). Continuar?")) return;
+  let corrigidos=0;
+  const alvosOutros=[
+    {desc:"99*SAO PAULOBRA",date:"2026-09-30",amount:10.00},
+    {desc:"99Negocia 31Jul 17h20mS",date:"2026-09-30",amount:1.50},
+    {desc:"99*SAO PAULOBRA",date:"2026-09-30",amount:13.00},
+    {desc:"99*SAO PAULOBRA",date:"2026-09-28",amount:16.80},
+    {desc:"99*SAO PAULOBRA",date:"2026-09-20",amount:13.92},
+    {desc:"PTO NOSSA SRA APARECIDP",date:"2026-09-19",amount:100.00},
+    {desc:"99*SAO PAULOBRA",date:"2026-09-12",amount:8.01},
+    {desc:"99Negocia 07Ago 15h04mS",date:"2026-09-07",amount:1.94},
+    {desc:"99*SAO PAULOBRA",date:"2026-09-07",amount:10.80},
+  ];
+  alvosOutros.forEach(a=>{
+    const g=D.gastos.find(x=>x.desc===a.desc&&x.date===a.date&&Math.abs(x.amount-a.amount)<0.01);
+    if(g&&g.cat!=="outros"){g.cat="outros";corrigidos++;}
+  });
+  // a compra da Samsung é exclusiva do Anderson: vai pra categoria "anderson" e marca a pessoa
+  const samsung=D.gastos.find(x=>x.desc==="SAMSUNG NO ITA 21/21"&&x.date==="2026-09-23"&&Math.abs(x.amount-119.00)<0.01);
+  if(samsung){
+    if(samsung.cat!=="anderson"){samsung.cat="anderson";corrigidos++;}
+    if(samsung.pessoa!=="Anderson"){samsung.pessoa="Anderson";corrigidos++;}
+  }
+  // se ainda existir a categoria avulsa antiga "Anderson", migra os gastos dela pra "anderson" e remove a duplicata
+  const catAnderson=(D.categorias_extras||[]).find(c=>c.label==="Anderson"&&c.id!=="anderson");
+  if(catAnderson){
+    D.gastos.filter(g=>g.cat===catAnderson.id).forEach(g=>{g.cat="anderson";corrigidos++;});
+    D.categorias_extras=D.categorias_extras.filter(c=>c.id!==catAnderson.id);
+    const idx=LIMITES.findIndex(l=>l.id===catAnderson.id);
+    if(idx>-1) LIMITES.splice(idx,1);
+  }
+  saveData();
+  showToast(`✅ ${corrigidos} lançamento(s) corrigido(s)`,"success");
+  render();
+}
+
+function restaurarJunho2026(){
+  if(!confirm("Apagar todos os lançamentos de junho/2026 e restaurar os manuais?")) return;
+  const corretos=[{"id":"g001","desc":"Fabianos","amount":89.0,"cat":"delivery","cartao":"Uniclass","date":"2026-06-22","type":"expense","pessoa":"Casal","criadoEm":"2026-06-22T12:00:00.000Z"},{"id":"g002","desc":"Almoço Pizza na Roça","amount":250.0,"cat":"delivery","cartao":"Uniclass","date":"2026-06-20","type":"expense","pessoa":"Casal","criadoEm":"2026-06-20T12:00:00.000Z"},{"id":"g003","desc":"Vo querer","amount":75.0,"cat":"delivery","cartao":"Uniclass","date":"2026-06-18","type":"expense","pessoa":"Casal","criadoEm":"2026-06-18T12:00:00.000Z"},{"id":"g004","desc":"99- Rita","amount":10.61,"cat":"gasolina","cartao":"Uniclass","date":"2026-06-14","type":"expense","pessoa":"Casal","criadoEm":"2026-06-14T12:00:00.000Z"},{"id":"g005","desc":"99- médico","amount":12.33,"cat":"gasolina","cartao":"Uniclass","date":"2026-06-12","type":"expense","pessoa":"Casal","criadoEm":"2026-06-12T12:00:00.000Z"},{"id":"g006","desc":"99","amount":13.9,"cat":"gasolina","cartao":"Uniclass","date":"2026-06-13","type":"expense","pessoa":"Casal","criadoEm":"2026-06-13T12:00:00.000Z"},{"id":"g007","desc":"Brods-Ifood","amount":73.0,"cat":"delivery","cartao":"Uniclass","date":"2026-06-11","type":"expense","pessoa":"Casal","criadoEm":"2026-06-11T12:00:00.000Z"},{"id":"g008","desc":"99","amount":17.0,"cat":"gasolina","cartao":"Uniclass","date":"2026-06-09","type":"expense","pessoa":"Casal","criadoEm":"2026-06-09T12:00:00.000Z"},{"id":"g009","desc":"McDonald's","amount":112.8,"cat":"delivery","cartao":"Uniclass","date":"2026-06-05","type":"expense","pessoa":"Casal","criadoEm":"2026-06-05T12:00:00.000Z"},{"id":"g010","desc":"Flor de sal (coxinha)","amount":56.0,"cat":"delivery","cartao":"Uniclass","date":"2026-06-04","type":"expense","pessoa":"Casal","criadoEm":"2026-06-04T12:00:00.000Z"},{"id":"g011","desc":"Macarrão","amount":105.0,"cat":"delivery","cartao":"Uniclass","date":"2026-06-02","type":"expense","pessoa":"Casal","criadoEm":"2026-06-02T12:00:00.000Z"},{"id":"g012","desc":"Posto Toninho","amount":150.0,"cat":"gasolina","cartao":"Uniclass","date":"2026-06-21","type":"expense","pessoa":"Casal","criadoEm":"2026-06-21T12:00:00.000Z"},{"id":"g013","desc":"Posto do Toningo","amount":319.0,"cat":"gasolina","cartao":"Uniclass","date":"2026-06-02","type":"expense","pessoa":"Casal","criadoEm":"2026-06-02T12:00:00.000Z"},{"id":"g014","desc":"Coleira Luna (1/2)","amount":64.0,"cat":"luna","cartao":"Uniclass","date":"2026-06-04","parcelado":true,"parcNum":1,"parcTotal":2,"type":"expense","pessoa":"Casal","criadoEm":"2026-06-04T12:00:00.000Z"},{"id":"g015","desc":"Coleira Luna (2/2)","amount":64.0,"cat":"luna","cartao":"Uniclass","date":"2026-07-04","parcelado":true,"parcNum":2,"parcTotal":2,"type":"expense","pessoa":"Casal","criadoEm":"2026-07-04T12:00:00.000Z"},{"id":"g016","desc":"Ração (1/2)","amount":175.5,"cat":"luna","cartao":"Uniclass","date":"2026-06-03","parcelado":true,"parcNum":1,"parcTotal":2,"type":"expense","pessoa":"Casal","criadoEm":"2026-06-03T12:00:00.000Z"},{"id":"g017","desc":"Ração (2/2)","amount":175.5,"cat":"luna","cartao":"Uniclass","date":"2026-07-03","parcelado":true,"parcNum":2,"parcTotal":2,"type":"expense","pessoa":"Casal","criadoEm":"2026-07-03T12:00:00.000Z"},{"id":"g018","desc":"Amazon - casa (1/5)","amount":53.97,"cat":"shopee","cartao":"Uniclass","date":"2026-06-02","parcelado":true,"parcNum":1,"parcTotal":5,"type":"expense","pessoa":"Casal","criadoEm":"2026-06-02T12:00:00.000Z"},{"id":"g019","desc":"Amazon - casa (2/5)","amount":53.97,"cat":"shopee","cartao":"Uniclass","date":"2026-07-02","parcelado":true,"parcNum":2,"parcTotal":5,"type":"expense","pessoa":"Casal","criadoEm":"2026-07-02T12:00:00.000Z"},{"id":"g020","desc":"Amazon - casa (3/5)","amount":53.97,"cat":"shopee","cartao":"Uniclass","date":"2026-08-02","parcelado":true,"parcNum":3,"parcTotal":5,"type":"expense","pessoa":"Casal","criadoEm":"2026-08-02T12:00:00.000Z"},{"id":"g021","desc":"Amazon - casa (4/5)","amount":53.97,"cat":"shopee","cartao":"Uniclass","date":"2026-09-02","parcelado":true,"parcNum":4,"parcTotal":5,"type":"expense","pessoa":"Casal","criadoEm":"2026-09-02T12:00:00.000Z"},{"id":"g022","desc":"Amazon - casa (5/5)","amount":53.97,"cat":"shopee","cartao":"Uniclass","date":"2026-10-02","parcelado":true,"parcNum":5,"parcTotal":5,"type":"expense","pessoa":"Casal","criadoEm":"2026-10-02T12:00:00.000Z"},{"id":"g023","desc":"Shopee - casa (1/5)","amount":50.1,"cat":"shopee","cartao":"Uniclass","date":"2026-06-02","parcelado":true,"parcNum":1,"parcTotal":5,"type":"expense","pessoa":"Casal","criadoEm":"2026-06-02T12:00:00.000Z"},{"id":"g024","desc":"Shopee - casa (2/5)","amount":50.1,"cat":"shopee","cartao":"Uniclass","date":"2026-07-02","parcelado":true,"parcNum":2,"parcTotal":5,"type":"expense","pessoa":"Casal","criadoEm":"2026-07-02T12:00:00.000Z"},{"id":"g025","desc":"Shopee - casa (3/5)","amount":50.1,"cat":"shopee","cartao":"Uniclass","date":"2026-08-02","parcelado":true,"parcNum":3,"parcTotal":5,"type":"expense","pessoa":"Casal","criadoEm":"2026-08-02T12:00:00.000Z"},{"id":"g026","desc":"Shopee - casa (4/5)","amount":50.1,"cat":"shopee","cartao":"Uniclass","date":"2026-09-02","parcelado":true,"parcNum":4,"parcTotal":5,"type":"expense","pessoa":"Casal","criadoEm":"2026-09-02T12:00:00.000Z"},{"id":"g027","desc":"Shopee - casa (5/5)","amount":50.1,"cat":"shopee","cartao":"Uniclass","date":"2026-10-02","parcelado":true,"parcNum":5,"parcTotal":5,"type":"expense","pessoa":"Casal","criadoEm":"2026-10-02T12:00:00.000Z"},{"id":"g028","desc":"Shopee - Casa (1/2)","amount":56.3,"cat":"shopee","cartao":"Uniclass","date":"2026-06-02","parcelado":true,"parcNum":1,"parcTotal":2,"type":"expense","pessoa":"Casal","criadoEm":"2026-06-02T12:00:00.000Z"},{"id":"g029","desc":"Shopee - Casa (2/2)","amount":56.3,"cat":"shopee","cartao":"Uniclass","date":"2026-07-02","parcelado":true,"parcNum":2,"parcTotal":2,"type":"expense","pessoa":"Casal","criadoEm":"2026-07-02T12:00:00.000Z"},{"id":"g030","desc":"Hyuga 🍱","amount":41.0,"cat":"supermercado","cartao":"Caju","date":"2026-06-09","type":"expense","pessoa":"Casal","criadoEm":"2026-06-09T12:00:00.000Z"},{"id":"g031","desc":"Botica Animale","amount":193.7,"cat":"luna","cartao":"Uniclass","date":"2026-06-16","type":"expense","pessoa":"Casal","criadoEm":"2026-06-16T12:00:00.000Z"}];
+  D.gastos=(D.gastos||[]).filter(g=>!g.date||!g.date.startsWith("2026-06"));
+  D.gastos=D.gastos.concat(corretos);
+  saveData();
+  alert("✅ Junho/2026 restaurado!");
+  render();
+}
+
+function popularSelectCat(catSelecionada){
+  const sel = document.getElementById("l_cat");
+  if(!sel) return;
+  const todasCats = [
+    ...LIMITES,
+    ...(D.categorias_extras||[])
+  ];
+  sel.innerHTML = todasCats.map(l=>`<option value="${l.id}"${l.id===(catSelecionada||"supermercado")?" selected":""}>${l.emoji||"📦"} ${l.label}</option>`).join("");
+}
+
+function abrirNovaCategoria(){
+  const nome = prompt("Nome da categoria (ex: 🏥 Saúde):");
+  if(!nome) return;
+  const limiteStr = prompt("Limite mensal (R$):");
+  const limite = parseFloat(limiteStr)||0;
+  const cartao = prompt("Cartão (Uniclass ou Caju):","Uniclass")||"Uniclass";
+  const id = nome.toLowerCase().replace(/[^a-z0-9]/g,"").slice(0,20)||"cat"+Date.now();
+  const nova = {id, label:nome.replace(/^[^\w]*/,"").trim()||nome, emoji:nome.match(/^\p{Emoji}/u)?.[0]||"📦", limite, cartao};
+  if(!D.categorias_extras) D.categorias_extras=[];
+  D.categorias_extras.push(nova);
+  // Adicionar ao LIMITES para análise
+  LIMITES.push(nova);
+  saveData();
+  popularSelectCat(id);
+  document.getElementById("l_cat").value=id;
+  fl.cat=id;
+}
+
+function abrirLancar(cat){
+  fl={desc:"",amount:"",cat:cat||"supermercado",pessoa:"Casal",date:hoje(),type:"expense",note:""};
+  document.getElementById("mLancar").style.display="flex";
+  setTimeout(()=>{
+    document.getElementById("l_desc").value="";
+    document.getElementById("l_amt").value="";
+    document.getElementById("l_date").value=hoje();
+    popularSelectCat(cat||"supermercado");
+    document.getElementById("l_pessoa").value="Casal";
+    document.getElementById("l_note").value="";
+    setTipo("expense");
+    checkCx();
+    document.getElementById("l_desc").focus();
+  },100);
+}
+function abrirLancarCat(cat){abrirLancar(cat);}
+function fecharLancar(){document.getElementById("mLancar").style.display="none";}
+
+function setTipo(t){
+  fl.type=t;
+  const be=document.getElementById("bExp");
+  const bi=document.getElementById("bInc");
+  const bp=document.getElementById("bParc");
+  const pb=document.getElementById("parcBlock");
+  if(be){be.style.background=t==="expense"?"#E86858":"var(--bg)";be.style.color=t==="expense"?"#fff":"var(--t2)";be.style.border=t==="expense"?"none":"0.5px solid var(--br)";}
+  if(bi){bi.style.background=t==="income"?"#3BAF7A":"var(--bg)";bi.style.color=t==="income"?"#fff":"var(--t2)";bi.style.border=t==="income"?"none":"0.5px solid var(--br)";}
+  if(bp){bp.style.background=t==="parcelado"?"#7B6FF0":"var(--bg)";bp.style.color=t==="parcelado"?"#fff":"var(--t2)";bp.style.border=t==="parcelado"?"none":"0.5px solid var(--br)";}
+  if(pb) pb.style.display=t==="parcelado"?"block":"none";
+  if(t==="parcelado") atualizarParcela();
+}
+
+function atualizarParcela(){
+  const total=parseFloat(document.getElementById("l_amt")?.value)||0;
+  const nParc=parseInt(document.getElementById("l_parc")?.value)||2;
+  const parcVal=total>0?total/nParc:0;
+  const el=document.getElementById("parcValor");
+  const info=document.getElementById("parcInfo");
+  if(el) el.textContent=parcVal>0?BRL(parcVal):"R$ —";
+  if(info&&total>0){
+    const dataStr=document.getElementById("l_date")?.value||hoje();
+    const d=new Date(dataStr+"T12:00:00");
+    const meses=[];
+    for(let i=0;i<nParc;i++){
+      const m=new Date(d);m.setMonth(m.getMonth()+i);
+      meses.push(m.toLocaleDateString("pt-BR",{month:"short",year:"2-digit"}));
+    }
+    info.textContent=`📦 ${nParc}x de ${BRL(parcVal)} · ${meses[0]} até ${meses[meses.length-1]}`;
+  }
+}
+
+function checkCx(){
+  const cat=document.getElementById("l_cat").value;
+  const l=LIMITES.find(x=>x.id===cat);
+  const info=document.getElementById("cxInfo");
+  if(l&&fl.type==="expense"){
+    const cartaoTag=l.cartao==="Caju"
+      ?`<span style="background:#27AE6020;color:#27AE60;padding:2px 7px;border-radius:20px;font-size:11px;margin-left:6px;font-weight:500">💳 Caju</span>`
+      :`<span style="background:#7B6FF020;color:#7B6FF0;padding:2px 7px;border-radius:20px;font-size:11px;margin-left:6px;font-weight:500">💳 Uniclass</span>`;
+    info.style.display="block";
+    info.innerHTML=`⚡ Limite ${l.emoji} ${l.label}: ${BRL(l.limite)}/mês ${cartaoTag}`;
+  } else {
+    info.style.display="none";
+  }
+}
+
+function lancar(){
+  const desc=document.getElementById("l_desc").value.trim();
+  const amt=parseFloat(document.getElementById("l_amt").value);
+  if(!desc||!amt)return;
+  const cat=document.getElementById("l_cat").value;
+  const pessoa=document.getElementById("l_pessoa").value;
+  const date=document.getElementById("l_date").value;
+  const note=document.getElementById("l_note").value;
+  const cartao=(LIMITES.find(x=>x.id===cat)||{cartao:"Uniclass"}).cartao;
+  const nParc=parseInt(document.getElementById("l_parc")?.value)||2;
+
+  if(fl.type==="parcelado"){
+    // cria um lançamento por parcela
+    const parcVal=parseFloat((amt/nParc).toFixed(2));
+    const dataBase=new Date(date+"T12:00:00");
+    const novos=[];
+    for(let i=0;i<nParc;i++){
+      const d=new Date(dataBase);d.setMonth(d.getMonth()+i);
+      const dStr=d.toISOString().split("T")[0];
+      novos.push({id:uid(),desc:`${desc} (${i+1}/${nParc})`,amount:parcVal,cat,pessoa,date:dStr,type:"expense",note,cartao,parcelado:true,parcTotal:nParc,parcNum:i+1,criadoEm:new Date().toISOString()});
+    }
+    D.gastos=novos.concat(D.gastos);
+    showToast(`📦 ${nParc} parcelas de ${BRL(parcVal)} criadas!`,"success");
+  } else {
+    const item={id:uid(),desc,amount:amt,cat,pessoa,date,type:fl.type,note,cartao,criadoEm:new Date().toISOString()};
+    D.gastos.unshift(item);
+    if(fl.type==="expense"){
+      const l=LIMITES.find(x=>x.id===cat);
+      if(l){
+        const agora=new Date();const lim30=new Date(agora);lim30.setDate(agora.getDate()-30);
+        const total=D.gastos.filter(g=>g.cat===cat&&g.type==="expense"&&new Date(g.date+"T12:00:00")>=lim30).reduce((s,g)=>s+g.amount,0);
+        if(total>l.limite) showToast(`🚨 Limite de ${l.label} ultrapassado!`,"danger");
+        else if(total/l.limite>=0.8) showToast(`⚠️ 80% do limite de ${l.label} atingido`,"warn");
+        else showToast("✅ Lançado!","success");
+      } else showToast("✅ Lançado!","success");
+    } else showToast("✅ Receita lançada!","success");
+  }
+
+  saveData();fecharLancar();render();
+}
+
+// ─── MODAL CAIXINHA ───────────────────────────────
+const CX_EMOJIS=["🆘","🧱","✈️","🐶","🚗","🏛️","🔥","📦","🎯","💍","🏖️","🎮","📚","💊","🏠","💰"];
+const CX_CORES=["#3BAF7A","#D67A2F","#3B9EBF","#E05C8C","#7B6FF0","#8B7BC8","#E86858","#888"];
+let cxEmoji="#3BAF7A", cxCor="#3BAF7A";
+
+function abrirCxModal(id){
+  editCxId=id||null;
+  const cx=id?D.cx_reserva.find(c=>c.id===id):null;
+  const tmpl=id?CX_RESERVA.find(c=>c.id===id):null;
+  const nome=cx?.name||(tmpl?.name||"");
+  cxEmoji=cx?.emoji||(tmpl?.emoji||"📦");
+  cxCor=cx?.color||(tmpl?.color||"#3BAF7A");
+
+  document.getElementById("mCxTit").textContent=id?"Editar caixinha":"Nova caixinha";
+  document.getElementById("cx_name").value=nome;
+  document.getElementById("cx_aporte").value=cx?aporteBase(cx):(tmpl?.aporte||"");
+  document.getElementById("cx_volta").value=cx?.voltaEm||"";
+  document.getElementById("cx_meta").value=cx?.meta||(tmpl?.meta||"");
+  document.getElementById("cx_saved").value=cx?.saved||0;
+  document.getElementById("btnDelCx").style.display=id?"block":"none";
+
+  // emojis
+  document.getElementById("mCxEmojis").innerHTML=CX_EMOJIS.map(e=>
+    `<button onclick="selecionarCxEmoji('${e}')" id="cxe_${e.codePointAt(0)}" style="width:34px;height:34px;border-radius:8px;border:${cxEmoji===e?"2px solid var(--pu)":"0.5px solid var(--br)"};background:${cxEmoji===e?"#7b6ff015":"transparent"};cursor:pointer;font-size:18px">${e}</button>`
+  ).join("");
+
+  // cores
+  document.getElementById("mCxCores").innerHTML=CX_CORES.map(c=>
+    `<button onclick="selecionarCxCor('${c}')" style="width:22px;height:22px;border-radius:50%;background:${c};border:${cxCor===c?"3px solid var(--t1)":"2px solid transparent"};cursor:pointer"></button>`
+  ).join("");
+
+  document.getElementById("mCx").style.display="flex";
+}
+
+function pausarTodasCx(){
+  const v=prompt("Voltar a contar em qual mês? (formato MM/AAAA)","01/2027");
+  if(!v) return;
+  const m=v.trim().match(/^(\d{1,2})\/(\d{4})$/);
+  if(!m||+m[1]<1||+m[1]>12){showToast("Use o formato MM/AAAA, ex: 01/2027","warn");return;}
+  const voltaEm=m[2]+"-"+m[1].padStart(2,"0");
+  D.cx_reserva=D.cx_reserva.map(c=>({...c,voltaEm}));
+  saveData();showToast("⏸️ Caixinhas pausadas até "+fmtMesCurto(voltaEm),"info");render();
+}
+function retomarTodasCx(){
+  D.cx_reserva=D.cx_reserva.map(c=>{const n={...c};delete n.voltaEm;return n;});
+  saveData();showToast("▶️ Caixinhas voltaram a contar","success");render();
+}
+
+function fecharCx(){document.getElementById("mCx").style.display="none";}
+
+function selecionarCxEmoji(e){
+  cxEmoji=e;
+  document.querySelectorAll("#mCxEmojis button").forEach(b=>{
+    const match=b.textContent.trim()===e;
+    b.style.border=match?"2px solid var(--pu)":"0.5px solid var(--br)";
+    b.style.background=match?"#7b6ff015":"transparent";
+  });
+}
+
+function selecionarCxCor(c){
+  cxCor=c;
+  document.querySelectorAll("#mCxCores button").forEach(b=>{
+    b.style.border=b.style.background===c?"3px solid var(--t1)":"2px solid transparent";
+  });
+}
+
+function salvarCx(){
+  const name=document.getElementById("cx_name").value.trim();
+  if(!name){showToast("Informe o nome da caixinha","warn");return;}
+  const aporte=parseFloat(document.getElementById("cx_aporte").value)||0;
+  const voltaEm=document.getElementById("cx_volta").value||"";
+  const meta=parseFloat(document.getElementById("cx_meta").value)||0;
+  const saved=parseFloat(document.getElementById("cx_saved").value)||0;
+
+  if(editCxId){
+    D.cx_reserva=D.cx_reserva.map(c=>c.id===editCxId?{...c,name,emoji:cxEmoji,aporte,meta,saved,color:cxCor,voltaEm}:c);
+    showToast("✅ Caixinha atualizada!","success");
+  } else {
+    const novaCx={id:uid(),name,emoji:cxEmoji,aporte,meta,saved,color:cxCor,voltaEm};
+    D.cx_reserva.push(novaCx);
+    showToast("✅ Caixinha criada!","success");
+  }
+  saveData();fecharCx();render();
+}
+
+function deletarCx(){
+  if(!editCxId)return;
+  if(!confirm("Excluir esta caixinha?"))return;
+  D.cx_reserva=D.cx_reserva.filter(c=>c.id!==editCxId);
+  saveData();fecharCx();showToast("🗑️ Caixinha excluída","info");render();
+}
+
+// ─── MODAL APORTE ─────────────────────────────────
+function abrirAporte(id){
+  aporteCxId=id;
+  const cx=D.cx_reserva.find(c=>c.id===id);
+  const tmpl=CX_RESERVA.find(c=>c.id===id);
+  const nome=cx?.name||(tmpl?.name||"caixinha");
+  document.getElementById("mAporteTit").textContent=`+ Adicionar à ${nome}`;
+  document.getElementById("a_val").value="";
+  document.getElementById("mAporte").style.display="flex";
+  setTimeout(()=>document.getElementById("a_val").focus(),100);
+}
+function fecharAporte(){document.getElementById("mAporte").style.display="none";}
+function confirmarAporte(){
+  const v=parseFloat(document.getElementById("a_val").value)||0;
+  if(!v)return;
+  const idx=D.cx_reserva.findIndex(x=>x.id===aporteCxId);
+  if(idx<0)return;
+  D.cx_reserva[idx].saved=(D.cx_reserva[idx].saved||0)+v;
+
+  // salvar no histórico de aportes
+  if(!D.aportes) D.aportes=[];
+  const cx=D.cx_reserva[idx];
+  const tmpl=CX_RESERVA.find(c=>c.id===aporteCxId);
+  D.aportes.unshift({
+    id:uid(),
+    cxId:aporteCxId,
+    cxName:cx.name||(tmpl?.name||"Caixinha"),
+    cxEmoji:cx.emoji||(tmpl?.emoji||"📦"),
+    cxColor:cx.color||(tmpl?.color||"#888"),
+    amount:v,
+    date:hoje(),
+    criadoEm:new Date().toISOString(),
+  });
+
+  const meta=cx.meta||(tmpl?.meta||0);
+  if(meta>0&&cx.saved>=meta) showToast("🎉 Meta da "+cx.name+" atingida!","success");
+  else showToast(`💰 ${BRL(v)} adicionados!`,"success");
+  saveData();fecharAporte();render();
+}
+
+// ─── CSV ITAÚ ─────────────────────────────────────
+const REGRAS=[
+  {p:["supermercado","mercado","carrefour","extra","pao de acucar","assai","hortifruti","feira","atacadao","san mich","acougue"],cat:"supermercado"},
+  {p:["posto","combustivel","gasolina","shell","ipiranga","ton"],cat:"gasolina"},
+  {p:["uber","99","taxi","ride"],cat:"gasolina"},
+  {p:["ifood","rappi","delivery","pizza","burger","mcdonalds","restaurante","lanchonete","padaria","99food","food"],cat:"delivery"},
+  {p:["shopee","amazon","mercado livre","casas bahia","magazine"],cat:"shopee"},
+  {p:["botica","pet","racao","veterinario","luna"],cat:"luna"},
+  {p:["farmacia","drogaria","ultrafarma","medico","clinica","hospital"],cat:"shopee"},
+];
+function catCSV(desc){
+  const d=(desc||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+  for(const r of REGRAS){if(r.p.some(p=>d.includes(p)))return r.cat;}
+  return "outros";
+}
+function parseCSV(text){
+  const linhas=text.split(/\r?\n/).map(l=>l.trim()).filter(Boolean);
+  const itens=[];let dentro=false;
+  for(const linha of linhas){
+    const low=linha.toLowerCase();
+    if(!dentro&&low.includes("data")&&(low.includes("valor")||low.includes("lancamento"))){dentro=true;continue;}
+    if(!dentro)continue;
+    if(low.startsWith("saldo")||low.includes("saldo disponivel"))break;
+    const sep=linha.includes(";")?";":",";
+    const cols=linha.split(sep).map(c=>c.replace(/"/g,"").trim());
+    if(cols.length<3)continue;
+    const dr=cols[0],dc=cols[1]||"",vr=cols[2]||"";
+    if(!/^\d{2}\/\d{2}\/\d{4}$/.test(dr))continue;
+    const [d,m,y]=dr.split("/");
+    const vs=vr.replace(/\./g,"").replace(",",".").replace(/[^0-9.\-]/g,"");
+    const v=parseFloat(vs);
+    if(isNaN(v))continue;
+    const tipo=v<0?"expense":"income";
+    itens.push({id:uid(),desc:dc,amount:Math.abs(v),type:tipo,cat:tipo==="income"?"receita":catCSV(dc),date:`${y}-${m}-${d}`,pessoa:"Casal",importado:true,criadoEm:new Date().toISOString()});
+  }
+  return itens;
+}
+function handleCSV(input){
+  const file=input.files[0];if(!file)return;
+  const r=new FileReader();
+  r.onload=e=>{
+    const itens=parseCSV(e.target.result);
+    if(itens.length===0){showToast("Nenhum lançamento encontrado","danger");return;}
+    const ids=new Set(D.gastos.map(g=>g.id));
+    const novos=itens.filter(i=>!ids.has(i.id));
+    D.gastos=novos.concat(D.gastos);
+    saveData();showToast("✅ "+novos.length+" lançamentos importados!","success");render();
+  };
+  r.readAsText(file,"latin1");
+}
+
+// ─── DELETE ───────────────────────────────────────
+function confirmarDel(id){D.gastos=D.gastos.filter(g=>g.id!==id);saveData();delId=null;render();}
+
+function confirmarDelAporte(id){
+  if(!D.aportes) D.aportes=[];
+  const ap=D.aportes.find(a=>a.id===id);
+  if(ap){
+    const idx=D.cx_reserva.findIndex(c=>c.id===ap.cxId);
+    if(idx>=0) D.cx_reserva[idx].saved=Math.max(0,(D.cx_reserva[idx].saved||0)-ap.amount);
+  }
+  D.aportes=D.aportes.filter(a=>a.id!==id);
+  saveData();delId=null;showToast("🗑️ Aporte removido","info");render();
+}
+
+// ─── TOGGLE FIXO ──────────────────────────────────
+// ─── FIXOS EDITÁVEIS ─────────────────────────────
+let _fixoEditIdx = null;
+
+function abrirNovoFixo(){
+  _fixoEditIdx=null;
+  document.getElementById("modalFixoTitulo").textContent="Novo fixo";
+  document.getElementById("fixoLabel").value="";
+  document.getElementById("fixoValor").value="";
+  document.getElementById("modalFixo").style.display="flex";
+  setTimeout(()=>document.getElementById("fixoLabel").focus(),50);
+}
+
+function editarFixo(i){
+  const fixos=D.fixos||FIXOS;
+  const f=fixos[i]; if(!f) return;
+  _fixoEditIdx=i;
+  document.getElementById("modalFixoTitulo").textContent="Editar fixo";
+  document.getElementById("fixoLabel").value=f.label;
+  document.getElementById("fixoValor").value=f.valor;
+  document.getElementById("modalFixo").style.display="flex";
+  setTimeout(()=>document.getElementById("fixoLabel").focus(),50);
+}
+
+function fecharModalFixo(){
+  document.getElementById("modalFixo").style.display="none";
+}
+
+function salvarFixo(){
+  const label=document.getElementById("fixoLabel").value.trim();
+  const valor=parseFloat(document.getElementById("fixoValor").value);
+  if(!label||!valor||valor<=0) return;
+  if(!D.fixos) D.fixos=[...FIXOS];
+  if(_fixoEditIdx!==null){ D.fixos[_fixoEditIdx]={label,valor}; }
+  else { D.fixos.push({label,valor}); }
+  saveData(); fecharModalFixo(); render();
+}
+
+function deletarFixo(i){
+  if(!confirm("Deletar este fixo?")) return;
+  if(!D.fixos) D.fixos=[...FIXOS];
+  D.fixos.splice(i,1);
+  if(D.fixos_check) D.fixos_check.pagos=(D.fixos_check.pagos||[]).filter(p=>p!==i).map(p=>p>i?p-1:p);
+  saveData(); render();
+}
+
+function toggleFixo(idx){
+  if(!D.fixos_check||D.fixos_check.mes!==mesFiltro) D.fixos_check={mes:mesFiltro,pagos:[]};
+  const pagos=D.fixos_check.pagos;
+  const pos=pagos.indexOf(idx);
+  if(pos>=0) pagos.splice(pos,1);
+  else pagos.push(idx);
+  if(pagos.length===FIXOS.length) showToast("✅ Todos os fixos pagos!","success");
+  else showToast(pagos.includes(idx)?"✓ Marcado como pago":"↩ Desmarcado","info");
+  saveData();render();
+}
+
+// ─── LEITURA DE PDF DA FATURA ─────────────────────
+if (typeof pdfjsLib !== "undefined") {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+}
+
+// ─── SENHA DE PDF PROTEGIDO ────────────────────────
+// pdf.js chama onPassword quando o arquivo é protegido; aqui a gente
+// transforma isso numa Promise ligada ao modal #mSenhaPDF, pra pedir
+// a senha pro usuário (e pedir de novo se ele errar).
+let _pdfSenhaResolve = null;
+let _pdfSenhaReject  = null;
+
+function pedirSenhaPDF(incorreta){
+  return new Promise((resolve, reject)=>{
+    _pdfSenhaResolve = resolve;
+    _pdfSenhaReject  = reject;
+    const erroEl   = document.getElementById("senhaPdfErro");
+    const inputEl  = document.getElementById("senhaPdfInput");
+    if (erroEl)  erroEl.style.display = incorreta ? "block" : "none";
+    if (inputEl) inputEl.value = "";
+    document.getElementById("mSenhaPDF").style.display = "flex";
+    setTimeout(()=>inputEl && inputEl.focus(), 50);
+  });
+}
+
+function confirmarSenhaPDF(){
+  const senha = document.getElementById("senhaPdfInput").value;
+  document.getElementById("mSenhaPDF").style.display = "none";
+  if (_pdfSenhaResolve) _pdfSenhaResolve(senha);
+  _pdfSenhaResolve = null; _pdfSenhaReject = null;
+}
+
+function cancelarSenhaPDF(){
+  document.getElementById("mSenhaPDF").style.display = "none";
+  if (_pdfSenhaReject) _pdfSenhaReject(new Error("cancelado"));
+  _pdfSenhaResolve = null; _pdfSenhaReject = null;
+}
+
+// Abre o PDF tratando o caso de ele pedir senha (e pedir de novo se errar)
+function abrirPdfComSenha(buf){
+  return new Promise((resolve, reject)=>{
+    const loadingTask = pdfjsLib.getDocument({ data: buf });
+    loadingTask.onPassword = (updatePassword, reason) => {
+      const incorreta = reason === pdfjsLib.PasswordResponses.INCORRECT_PASSWORD;
+      pedirSenhaPDF(incorreta).then(senha=>{
+        updatePassword(senha);
+      }).catch(()=>{
+        try{ loadingTask.destroy(); }catch(_){}
+        reject(new Error("cancelado"));
+      });
+    };
+    loadingTask.promise.then(resolve, reject);
+  });
+}
+
+// Fluxo principal: anexar PDF → (pede senha se precisar) → extrai texto
+// → identifica os lançamentos item a item → mostra pra conferir e importar
+// Reconstrói as linhas visuais do PDF a partir da posição (X,Y) de cada
+// fragmento de texto — o pdf.js não devolve quebras de linha, só a posição
+// de cada pedacinho de texto na página, então agrupamos por altura (Y).
+async function extrairLinhasPDF(pdf){
+  const linhas = [];
+  for (let p = 1; p <= pdf.numPages; p++){
+    const page = await pdf.getPage(p);
+    const content = await page.getTextContent();
+    const itens = content.items
+      .filter(it => it.str && it.str.trim())
+      .map(it => ({ str: it.str, x: it.transform[4], y: it.transform[5] }));
+    itens.sort((a,b) => b.y - a.y || a.x - b.x);
+
+    const TOL = 2.5; // tolerância em pontos pra considerar "mesma linha"
+    let atual = [];
+    let yAtual = null;
+    itens.forEach(it => {
+      if (yAtual === null || Math.abs(it.y - yAtual) <= TOL){
+        atual.push(it);
+        if (yAtual === null) yAtual = it.y;
+      } else {
+        linhas.push(atual.sort((a,b)=>a.x-b.x).map(i=>i.str).join(" "));
+        atual = [it];
+        yAtual = it.y;
+      }
+    });
+    if (atual.length) linhas.push(atual.sort((a,b)=>a.x-b.x).map(i=>i.str).join(" "));
+  }
+  return linhas.map(l => l.replace(/\s+/g," ").trim()).filter(Boolean);
+}
+// Descobre o ano de referência da fatura (usa a data de vencimento impressa)
+function detectarAnoEMesVencimento(texto){
+  let m = texto.match(/Vencimento:?\s*(\d{2})\/(\d{2})\/(\d{4})/i);
+  if (!m) m = texto.match(/(\d{2})\/(\d{2})\/(\d{4})/);
+  if (!m) { const hoje=new Date(); return {ano:hoje.getFullYear(), mes:hoje.getMonth()+1}; }
+  return { ano: parseInt(m[3],10), mes: parseInt(m[2],10) };
+}
+
+// Varre um bloco de texto (várias linhas coladas) atrás de TODAS as ocorrências
+// do padrão "DD/MM ESTABELECIMENTO [parcela NN/NN] VALOR" — sem exigir que a
+// data esteja logo no início da linha. Isso importa porque a fatura tem duas
+// colunas lado a lado ("Pagamentos efetuados" e "Lançamentos: compras e
+// saques"), e quando as duas têm uma linha na mesma altura, a reconstrução por
+// posição gruda as duas juntas num texto só — aí a transação de verdade fica
+// "no meio" do texto, não no começo.
+// Sugere categoria + cartão pra uma descrição de lançamento, com base em
+// palavras-chave conhecidas do estabelecimento.
+function catPDF(desc){
+  const d = (desc||"").toLowerCase();
+  const REGRAS_PDF = [
+    {p:["supermercado","mercado","carrefour","extra","assai","hortifruti","feira","san mich","matos","economart","foncesca"],cat:"supermercado",cartao:"Caju"},
+    {p:["posto","combustivel","gasolina","shell","ipiranga","ton-ct","ton ct","autoposto","alcool","etanol"],cat:"gasolina",cartao:"Uniclass"},
+    {p:["99food","99 food","ifood","rappi","delivery","pizza","burger","mcdonalds","restaurante","lanchonete","padaria","food club","macarrao","chinesa","italiana","hamburguer","dita","roça","almoco","jantar","sushi","churrasco"],cat:"delivery",cartao:"Uniclass"},
+    {p:["uber","taxi","cabify","ride"],cat:"delivery",cartao:"Uniclass"},
+    {p:["shopee","amazon","mercado livre","casas bahia","magazine","shein","aliexpress"],cat:"shopee",cartao:"Uniclass"},
+    {p:["parcel","financ","emprest","maquina de lavar","geladeira","fogao","movel","sofa"],cat:"parcelas",cartao:"Uniclass"},
+    {p:["botica","pet","racao","veterinario","luna","animale","bich","banho","tosa"],cat:"luna",cartao:"Uniclass"},
+    {p:["farmacia","drogaria","droga raia","ultrafarma","medico","clinica","hospital","saude"],cat:"shopee",cartao:"Uniclass"},
+  ];
+  for (const regra of REGRAS_PDF){
+    if (regra.p.some(palavra=>d.includes(palavra))) return { cat: regra.cat, cartao: regra.cartao };
+  }
+  return { cat: "outros", cartao: "Uniclass" };
+}
+
+function extrairTransacoesDoTexto(texto){
+  const resultados = [];
+  const re = /(\d{2})\/(\d{2})\s+(.+?)\s+(-?)\s*(\d{1,3}(?:\.\d{3})*,\d{2})(?!\d)/g;
+  let m;
+  while ((m = re.exec(texto)) !== null){
+    const [, dd, mm, descBruto, sinal, valorStr] = m;
+    if (sinal === "-") continue; // valor negativo = pagamento/estorno, não é lançamento de compra
+
+    const valor = parseFloat(valorStr.replace(/\./g,"").replace(",","."));
+    if (!valor || valor <= 0 || valor > 50000) continue;
+
+    let desc = descBruto.trim();
+    // detecta marcação de parcela tipo "10/12" logo antes do valor
+    let parcNum = null, parcTotal = null;
+    const parc = desc.match(/(\d{1,2})\/(\d{1,2})\s*$/);
+    if (parc){
+      parcNum = parseInt(parc[1],10);
+      parcTotal = parseInt(parc[2],10);
+      desc = desc.slice(0, parc.index).trim();
+    }
+    desc = desc.replace(/\s+/g," ").trim();
+    if (!desc || desc.length < 2) continue;
+    // ignora resíduos de cabeçalho/rodapé que podem ter ficado colados antes da data
+    if (/^(total|subtotal|saldo|pagamento|estabelecimento|data|limite|encargo|iof|juro|cet|lan[cç]amentos|compras)/i.test(desc)) continue;
+
+    resultados.push({ dia: dd, mes: mm, desc, valor, parcNum, parcTotal });
+  }
+  return resultados;
+}
+
+async function importarFaturaPDF(input){
+  const file = input.files[0];
+  if (!file) return;
+  const el = document.getElementById("pdfResult");
+  if (el) el.innerHTML = `<p style="font-size:12px;color:var(--t2);text-align:center;padding:12px 0">⏳ Lendo o PDF…</p>`;
+  const inputRef = input;
+
+  try{
+    if (!window.pdfjsLib){
+      if (el) el.innerHTML = `<p style="font-size:12px;color:#E86858;text-align:center;padding:12px 0">❌ PDF.js não carregou. Verifique sua conexão e tente de novo.</p>`;
+      return;
+    }
+    const buf = await file.arrayBuffer();
+    const pdf = await abrirPdfComSenha(buf);
+
+    const linhas = await extrairLinhasPDF(pdf);
+    _ultimasLinhasPDF = linhas; // guardado só pra debug, ver botão "Ver texto lido"
+    const textoCompleto = linhas.join("\n");
+    const { ano: anoRef, mes: vencMes } = detectarAnoEMesVencimento(textoCompleto);
+
+    // Total impresso na própria fatura, pra conferir contra a soma dos itens
+    let totalImpresso = null;
+    const padroesTotal = [
+      /total\s+desta\s+fatura[:\s]*r?\$?\s*([\d.,]+)/i,
+      /o\s+total\s+da\s+sua\s+fatura\s+[ée]\s*:?\s*r?\$?\s*([\d.,]+)/i,
+    ];
+    for (const p of padroesTotal){
+      const m = textoCompleto.match(p);
+      if (m){ totalImpresso = parseFloat(m[1].replace(/\./g,"").replace(",",".")); break; }
+    }
+
+    // A fatura lista, no mesmo formato de tabela, uma seção separada de
+    // parcelas que só vão cair em faturas futuras ("Compras parceladas -
+    // próximas faturas"). Essas linhas não são deste mês — precisam ficar
+    // de fora da soma. O cabeçalho "Lançamentos: compras e saques" se repete
+    // a cada página, então usamos ele pra "religar" a contagem se voltar.
+    // Guardamos as futuras à parte (não pra importar, só pra você conferir).
+    // Comparação normalizada (sem acento, sem espaço) porque o PDF às vezes
+    // quebra palavras acentuadas em pedaços com espaço no meio (ex: "pr ó ximas").
+    const normalizarChave = s => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g,"");
+    let dentroDeFuturas = false;
+    const linhasDesteMs = [];
+    const linhasFuturas = [];
+    linhas.forEach(linha=>{
+      const chave = normalizarChave(linha);
+      if (chave.includes("comprasparceladas") && chave.includes("proxim")) dentroDeFuturas = true;
+      if (chave.includes("lancamentos") && chave.includes("comprasesaques")) dentroDeFuturas = false;
+      // nunca descarta a linha inteira: o cabeçalho pode vir grudado com uma
+      // transação de verdade (duas colunas na mesma altura), então ela sempre
+      // entra no balde certo (com base no estado já atualizado da flag acima)
+      (dentroDeFuturas ? linhasFuturas : linhasDesteMs).push(linha);
+    });
+
+    const brutos = extrairTransacoesDoTexto(linhasDesteMs.join("\n"));
+    const futurasBrutas = extrairTransacoesDoTexto(linhasFuturas.join("\n"));
+
+    // Lança sempre dentro do mês de VENCIMENTO da fatura (não o mês da compra
+    // em si) — mesma convenção já usada no resto do app pra gastos de cartão,
+    // já que é isso que conta pro orçamento do mês. Só aproveita o dia da compra.
+    // A fatura do Uniclass fecha por volta do dia 26 e vence no mês seguinte.
+    // Os gastos pertencem ao mês de FECHAMENTO (vencimento − 1): a fatura que
+    // fecha em outubro e vence em novembro entra em outubro.
+    const dRef = new Date(anoRef, vencMes-2, 1);
+    _mesRefPDF = dRef.getFullYear()+"-"+String(dRef.getMonth()+1).padStart(2,"0");
+    const [anoLanc, mesLancNum] = _mesRefPDF.split("-").map(Number);
+    const mesVencStr = String(mesLancNum).padStart(2,"0");
+    const diasNoMesVenc = new Date(anoLanc, mesLancNum, 0).getDate();
+
+    const itens = brutos.map(b => {
+      const { cat, cartao } = catPDF(b.desc);
+      const dia = String(Math.min(parseInt(b.dia,10)||1, diasNoMesVenc)).padStart(2,"0");
+      return {
+        id: uid(),
+        desc: b.desc,
+        amount: b.valor,
+        cat, cartao,
+        date: `${anoLanc}-${mesVencStr}-${dia}`,
+        _dia: parseInt(b.dia,10)||1,
+        type: "expense",
+        pessoa: "Casal",
+        importado: true,
+        criadoEm: new Date().toISOString(),
+        _confirmado: false,
+        ...(b.parcNum && b.parcTotal ? { parcelado:true, parcNum:b.parcNum, parcTotal:b.parcTotal } : {}),
+      };
+    });
+
+    // remove duplicatas óbvias (mesma data+valor+início da descrição)
+    const vistos = new Set();
+    const itensLimpos = itens.filter(item=>{
+      const key = `${item.date}-${item.amount}-${item.desc}`;
+      if (vistos.has(key)) return false;
+      vistos.add(key);
+      return true;
+    });
+
+    if (itensLimpos.length === 0){
+      const escapado  = textoCompleto.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+      if (el) el.innerHTML = `
+        <p style="font-size:12px;color:#D67A2F;text-align:center;padding:12px 0 8px">Ainda não reconheço o padrão dessa fatura pra separar os lançamentos sozinho.</p>
+        <p style="font-size:11px;color:var(--t2);margin:0 0 8px;line-height:1.5">O PDF foi lido certinho (senha ok) — só o formato do texto que veio diferente do esperado. Copie o texto abaixo (pode apagar valores/nomes sensíveis) e envie pro Claude ajustar a leitura.</p>
+        <textarea id="pdfTextoBruto" readonly onclick="this.select()" style="width:100%;height:160px;padding:10px 12px;border-radius:var(--rs);border:0.5px solid var(--br);background:var(--bg);color:var(--t1);font-size:11px;font-family:'IBM Plex Mono',monospace;resize:vertical;outline:none;line-height:1.5;-webkit-appearance:none;margin-bottom:8px">${escapado}</textarea>
+        <button onclick="(async()=>{const t=document.getElementById('pdfTextoBruto');try{await navigator.clipboard.writeText(t.value);}catch(e){t.select();document.execCommand('copy');}showToast('📋 Texto copiado!','info')})()" style="width:100%;padding:10px;border-radius:var(--rs);border:0.5px solid var(--br);background:var(--bg);color:var(--t1);font-size:12px;cursor:pointer;font-family:inherit">📋 Copiar texto extraído</button>
+      `;
+      return;
+    }
+    const futuras = futurasBrutas.map(b => {
+      const mmNum = parseInt(b.mes,10);
+      let ano = anoRef;
+      if (mmNum > vencMes) ano = anoRef - 1;
+      return { desc:b.desc, valor:b.valor, date:`${ano}-${b.mes}-${b.dia}`, parcNum:b.parcNum, parcTotal:b.parcTotal };
+    });
+
+    exibirPreviewPDF(itensLimpos, totalImpresso, futuras);
+  } catch(e){
+    if (e && e.message === "cancelado"){
+      if (el) el.innerHTML = "";
+    } else {
+      if (el) el.innerHTML = `<p style="font-size:12px;color:#E86858;text-align:center;padding:12px 0">❌ Não consegui abrir esse PDF (${(e&&e.message)||"erro desconhecido"}). Confira se é o arquivo certo.</p>`;
+    }
+  } finally {
+    inputRef.value = ""; // permite selecionar o mesmo arquivo de novo
+  }
+}
+
+let _itensPDF=[];
+let _totalImpressoPDF=null;
+let _futurasPDF=[];
+let _ultimasLinhasPDF=[];
+let _mesRefPDF=null;
+
+// Troca o mês em que os itens da prévia vão ser lançados (mantém o dia da compra)
+function mudarMesPDF(v){
+  if(!v) return;
+  _mesRefPDF=v;
+  const [y,m]=v.split("-").map(Number);
+  const dias=new Date(y,m,0).getDate();
+  _itensPDF.forEach(it=>{
+    const diaOrig=it._dia||parseInt((it.date||"").slice(8,10),10)||1;
+    it.date=v+"-"+String(Math.min(diaOrig,dias)).padStart(2,"0");
+  });
+  exibirPreviewPDF(_itensPDF);
+}
+
+// ─── REORGANIZAR FATURAS IMPORTADAS ───────────────
+// Cada importação de PDF grava todos os itens com o mesmo horário (criadoEm).
+// Agrupando por esse horário, dá pra separar uma fatura da outra mesmo que
+// duas tenham ido parar no mesmo mês, e escolher o mês certo de cada uma.
+function lotesImportados(){
+  const imp=D.gastos.filter(g=>g.importado&&g.type==="expense"&&g.date&&g.criadoEm)
+    .sort((a,b)=>new Date(a.criadoEm)-new Date(b.criadoEm));
+  const lotes=[];
+  imp.forEach(g=>{
+    const t=new Date(g.criadoEm).getTime();
+    const ult=lotes[lotes.length-1];
+    if(ult && t-ult._t<=5000){ult.itens.push(g);ult._t=t;}
+    else lotes.push({itens:[g],_t:t,criadoEm:g.criadoEm});
+  });
+  lotes.forEach(l=>{
+    const cont={};
+    l.itens.forEach(g=>{const m=g.date.slice(0,7);cont[m]=(cont[m]||0)+1;});
+    l.mesAtual=Object.keys(cont).sort((a,b)=>cont[b]-cont[a])[0];
+    l.total=l.itens.reduce((s,g)=>s+g.amount,0);
+  });
+  // Sugestão: tudo foi importado um mês à frente (mês do vencimento), então
+  // volta 1 mês. Exceção: quando um mês tem mais de uma fatura, a importada
+  // por último já é a que foi movida com o botão "voltar 1 mês" e fica onde está.
+  const porMes={};
+  lotes.forEach(l=>{(porMes[l.mesAtual]=porMes[l.mesAtual]||[]).push(l);});
+  Object.values(porMes).forEach(grupo=>{
+    grupo.forEach((l,i)=>{
+      l.sugestao=(grupo.length>1&&i===grupo.length-1)?l.mesAtual:mesAnterior(l.mesAtual);
+    });
+  });
+  // marca possíveis importações repetidas da mesma fatura
+  lotes.forEach((l,i)=>{
+    l.duplicada=lotes.some((o,j)=>j<i&&o.itens.length===l.itens.length&&Math.abs(o.total-l.total)<0.02);
+  });
+  return lotes;
+}
+
+let _lotesReorg=[];
+function abrirReorganizarFaturas(){
+  _lotesReorg=lotesImportados();
+  if(!_lotesReorg.length){alert("Nenhuma fatura importada por PDF encontrada.");return;}
+  const modal=document.createElement("div");
+  modal.id="modalReorg";
+  modal.className="mo";
+  modal.onclick=e=>{if(e.target===modal)modal.remove();};
+  const linhas=_lotesReorg.map((l,i)=>{
+    const top=[...l.itens].sort((a,b)=>b.amount-a.amount).slice(0,3)
+      .map(g=>g.desc+(g.parcelado?" "+g.parcNum+"/"+g.parcTotal:"")).join(", ");
+    return`<div style="border:0.5px solid ${l.duplicada?"#E8685860":"var(--br)"};border-radius:var(--rs);padding:11px 12px;margin-bottom:8px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:3px">
+        <span style="font-size:13px;font-weight:600;color:var(--t1)">${BRL(l.total)} · ${l.itens.length} itens</span>
+        <span style="font-size:10.5px;color:var(--t2);white-space:nowrap">importada em ${new Date(l.criadoEm).toLocaleDateString("pt-BR")}</span>
+      </div>
+      <p style="font-size:11px;color:var(--t2);margin:0 0 4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${top}</p>
+      ${l.duplicada?`<p style="font-size:11px;color:#E86858;margin:0 0 4px">⚠️ Parece a mesma fatura de outra importação (mesmo total e nº de itens)</p>`:""}
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <span style="font-size:11.5px;color:var(--t2)">Está em <strong style="color:var(--t1);text-transform:capitalize">${fmtMes(l.mesAtual)}</strong> → mover para</span>
+        <input type="month" data-lote="${i}" value="${l.sugestao}" onchange="atualizarResumoReorg()" style="flex:1;min-width:140px;padding:6px 10px;font-size:14px">
+      </div>
+    </div>`;
+  }).join("");
+  modal.innerHTML=`<div class="mb" onclick="event.stopPropagation()">
+    <div class="mt"><span>Reorganizar faturas</span><button onclick="document.getElementById('modalReorg').remove()" style="background:none;border:none;font-size:22px;cursor:pointer;color:var(--t2)">×</button></div>
+    <p style="font-size:12px;color:var(--t2);margin:0 0 12px;line-height:1.5">Cada bloco é uma fatura importada por PDF. O mês sugerido já está preenchido (um mês antes de onde caiu), mas confira pelos itens de exemplo e troque se precisar. Lançamentos feitos à mão não são mexidos.</p>
+    ${linhas}
+    <div id="resumoReorg" style="margin:12px 0"></div>
+    <button class="btn btnp" onclick="aplicarReorganizacao()">Aplicar</button>
+  </div>`;
+  document.body.appendChild(modal);
+  atualizarResumoReorg();
+}
+
+function atualizarResumoReorg(){
+  const el=document.getElementById("resumoReorg"); if(!el) return;
+  const porMes={};
+  document.querySelectorAll("#modalReorg input[data-lote]").forEach(inp=>{
+    const l=_lotesReorg[+inp.dataset.lote]; if(!inp.value) return;
+    (porMes[inp.value]=porMes[inp.value]||[]).push(l);
+  });
+  const meses=Object.keys(porMes).sort();
+  el.innerHTML=`<p style="font-size:12px;font-weight:600;color:var(--t1);margin:0 0 6px">Como vai ficar</p>`+meses.map(m=>{
+    const g=porMes[m], conflito=g.length>1;
+    return`<div class="fr"><span style="text-transform:capitalize;color:${conflito?"#E86858":"var(--t2)"}">${conflito?"⚠️ ":""}${fmtMes(m)}${conflito?" ("+g.length+" faturas)":""}</span><strong>${BRL(g.reduce((s,l)=>s+l.total,0))}</strong></div>`;
+  }).join("");
+}
+
+function aplicarReorganizacao(){
+  const movs=[];
+  document.querySelectorAll("#modalReorg input[data-lote]").forEach(inp=>{
+    const l=_lotesReorg[+inp.dataset.lote];
+    if(inp.value&&inp.value!==l.mesAtual) movs.push({l,destino:inp.value});
+  });
+  if(!movs.length){document.getElementById("modalReorg").remove();showToast("Nada pra mudar","info");return;}
+  if(!confirm(`Mover ${movs.length} fatura(s)? Dá pra desfazer depois pelo botão "Desfazer reorganização".`)) return;
+  const backup=[];
+  movs.forEach(({l,destino})=>{
+    const [y,m]=destino.split("-").map(Number);
+    const dias=new Date(y,m,0).getDate();
+    l.itens.forEach(g=>{
+      backup.push({id:g.id,date:g.date});
+      g.date=destino+"-"+String(Math.min(parseInt(g.date.slice(8,10),10)||1,dias)).padStart(2,"0");
+    });
+  });
+  D.backup_reorg={em:new Date().toISOString(),itens:backup};
+  saveData();
+  document.getElementById("modalReorg").remove();
+  showToast(`✅ ${movs.length} fatura(s) reorganizada(s)`,"success");
+  render();
+}
+
+function desfazerReorganizacao(){
+  if(!D.backup_reorg) return;
+  if(!confirm("Voltar todas as faturas para onde estavam antes da última reorganização?")) return;
+  const mapa=new Map(D.backup_reorg.itens.map(b=>[b.id,b.date]));
+  D.gastos.forEach(g=>{if(mapa.has(g.id)) g.date=mapa.get(g.id);});
+  delete D.backup_reorg;
+  saveData();showToast("↶ Reorganização desfeita","info");render();
+}
+
+// Corrige faturas que já foram importadas um mês à frente:
+// move os lançamentos IMPORTADOS do PDF do mês aberto para o mês anterior.
+function voltarImportadosUmMes(){
+  const itens=D.gastos.filter(g=>g.importado&&g.type==="expense"&&dentroMes(g.date,mesFiltro));
+  if(!itens.length){showToast("Nenhum lançamento importado em "+fmtMes(mesFiltro),"warn");return;}
+  const destino=mesAnterior(mesFiltro);
+  const total=itens.reduce((s,g)=>s+g.amount,0);
+  if(!confirm(`Mover ${itens.length} lançamento(s) importado(s) da fatura (${BRL(total)}) de ${fmtMes(mesFiltro)} para ${fmtMes(destino)}?\n\nLançamentos feitos à mão não são mexidos.`)) return;
+  const [y,m]=destino.split("-").map(Number);
+  const dias=new Date(y,m,0).getDate();
+  itens.forEach(g=>{
+    const dia=Math.min(parseInt(g.date.slice(8,10),10)||1,dias);
+    g.date=destino+"-"+String(dia).padStart(2,"0");
+  });
+  saveData();
+  mesFiltro=destino;
+  showToast(`✅ ${itens.length} lançamento(s) movido(s) para ${fmtMes(destino)}`,"success");
+  render();
+}
+
+function exibirPreviewPDF(itens, totalImpressoFatura, futuras){
+  _itensPDF=itens;
+  if (totalImpressoFatura!=null) _totalImpressoPDF = totalImpressoFatura;
+  if (futuras!=null) _futurasPDF = futuras;
+  const totalImpressoUsado = totalImpressoFatura!=null ? totalImpressoFatura : _totalImpressoPDF;
+  const futurasUsadas = futuras!=null ? futuras : _futurasPDF;
+  const totalFatura=itens.reduce((s,i)=>s+i.amount,0);
+  const totalPlan=LIMITES.reduce((s,l)=>s+l.limite,0);
+  const diff=totalPlan-totalFatura;
+  const bateComImpresso = totalImpressoUsado==null || Math.abs(totalImpressoUsado-totalFatura)<0.05;
+
+  const html=`
+  <div style="background:var(--card);border:0.5px solid var(--br);border-radius:var(--r);padding:14px;margin-bottom:10px">
+    ${!bateComImpresso?`
+    <div class="alr" style="background:#E8685812;border:0.5px solid #E8685840;margin-bottom:10px">
+      ⚠️ <span style="color:var(--t2)">A soma dos itens encontrados (<strong style="color:#E86858">${BRL(totalFatura)}</strong>) não bate com o total impresso na fatura (<strong style="color:var(--t1)">${BRL(totalImpressoUsado)}</strong>). Confira a lista antes de importar — pode ter algum lançamento faltando ou a mais.</span>
+    </div>`:""}
+    <p style="font-size:13px;font-weight:500;color:var(--t1);margin:0 0 10px">${itens.length} lançamentos encontrados na fatura</p>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;padding:9px 12px;background:var(--bg);border:0.5px solid var(--br);border-radius:var(--rs)">
+      <span style="font-size:12px;color:var(--t2);flex-shrink:0">Lançar no mês</span>
+      <input type="month" value="${_mesRefPDF||""}" onchange="mudarMesPDF(this.value)" style="flex:1;padding:6px 10px;font-size:14px">
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px">
+      <div class="st"><p>Total fatura</p><h3 style="color:#E86858">${BRL(totalFatura)}</h3></div>
+      <div class="st"><p>Planejado</p><h3 style="color:var(--t1)">${BRL(totalPlan)}</h3></div>
+      <div class="st"><p>${diff>=0?"Sobrou":"Estourou"}</p><h3 style="color:${diff>=0?"#3BAF7A":"#E86858"}">${BRL(Math.abs(diff))}</h3></div>
+    </div>
+    <div style="max-height:300px;overflow-y:auto;border:0.5px solid var(--br);border-radius:var(--rs)">
+      ${itens.map((item,idx)=>{
+        const l=LIMITES.find(x=>x.id===item.cat);
+        return`<div style="display:flex;align-items:center;gap:8px;padding:9px 12px;border-bottom:0.5px solid var(--br)">
+          <span style="font-size:16px;flex-shrink:0">${l?l.emoji:"📦"}</span>
+          <div style="flex:1;min-width:0">
+            <p style="margin:0 0 1px;font-size:12px;font-weight:500;color:var(--t1);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${item.desc}</p>
+            <div style="display:flex;align-items:center;gap:6px">
+              <span style="font-size:10px;color:var(--t2)">${item.date}</span>
+              <select onchange="_itensPDF[${idx}].cat=this.value;_itensPDF[${idx}].cartao=this.options[this.selectedIndex].dataset.cartao"
+                style="font-size:10px;padding:1px 4px;border-radius:4px;border:0.5px solid var(--br);background:var(--bg);color:var(--t2)">
+                ${LIMITES.map(ll=>`<option value="${ll.id}" data-cartao="${ll.cartao}" ${item.cat===ll.id?"selected":""}>${ll.emoji} ${ll.label}</option>`).join("")}
+              </select>
+            </div>
+          </div>
+          <span style="font-size:13px;font-weight:500;color:#E86858;flex-shrink:0">-${BRL(item.amount)}</span>
+        </div>`;
+      }).join("")}
+    </div>
+    ${futurasUsadas && futurasUsadas.length>0?`
+    <details style="margin-top:10px">
+      <summary style="font-size:12px;color:var(--t2);cursor:pointer">🔮 ${futurasUsadas.length} parcela(s) futura(s) identificada(s) na fatura — <strong>não incluídas</strong> na soma deste mês (toque pra conferir)</summary>
+      <div style="margin-top:8px;max-height:200px;overflow-y:auto;border:0.5px solid var(--br);border-radius:var(--rs)">
+        ${futurasUsadas.map(f=>`<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px 12px;border-bottom:0.5px solid var(--br);font-size:11px;color:var(--t2)">
+          <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${fData(f.date)} · ${f.desc}${f.parcNum?` · 📦 ${f.parcNum}/${f.parcTotal}`:""}</span>
+          <span style="flex-shrink:0">${BRL(f.valor)}</span>
+        </div>`).join("")}
+      </div>
+    </details>`:""}
+    <details style="margin-top:8px">
+      <summary style="font-size:11px;color:var(--t2);cursor:pointer">🔍 Ver texto lido do PDF (debug)</summary>
+      <div style="margin-top:6px">
+        <textarea id="pdfLinhasDebug" readonly onclick="this.select()" style="width:100%;height:140px;padding:8px 10px;border-radius:var(--rs);border:0.5px solid var(--br);background:var(--bg);color:var(--t1);font-size:10px;font-family:'IBM Plex Mono',monospace;resize:vertical;outline:none;line-height:1.5;-webkit-appearance:none;margin-bottom:6px">${(_ultimasLinhasPDF||[]).join("\n").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}</textarea>
+        <button onclick="(async()=>{const t=document.getElementById('pdfLinhasDebug');try{await navigator.clipboard.writeText(t.value);}catch(e){t.select();document.execCommand('copy');}showToast('📋 Texto copiado!','info')})()" style="width:100%;padding:8px;border-radius:var(--rs);border:0.5px solid var(--br);background:var(--bg);color:var(--t1);font-size:11px;cursor:pointer;font-family:inherit">📋 Copiar texto lido</button>
+      </div>
+    </details>
+    <div style="display:flex;gap:10px;margin-top:12px">
+      <button onclick="cancelarPDF()" style="flex:1;padding:10px;border-radius:var(--rs);border:0.5px solid var(--br);background:var(--bg);color:var(--t2);cursor:pointer;font-size:13px;font-family:inherit">Cancelar</button>
+      <button onclick="confirmarPDF()" style="flex:2;padding:10px;border-radius:var(--rs);background:var(--pu);color:#fff;border:none;cursor:pointer;font-weight:500;font-size:14px;font-family:inherit">✓ Importar ${itens.length} lançamentos</button>
+    </div>
+  </div>`;
+
+  document.getElementById("pdfResult").innerHTML=html;
+}
+
+function cancelarPDF(){
+  _itensPDF=[];
+  _totalImpressoPDF=null;
+  _futurasPDF=[];
+  document.getElementById("pdfResult").innerHTML="";
+}
+
+function confirmarPDF(){
+  if(!_itensPDF.length) return;
+  const existIds=new Set(D.gastos.map(g=>g.id));
+  const novos=_itensPDF.filter(i=>!existIds.has(i.id)).map(i=>{const n={...i};delete n._dia;return n;});
+  D.gastos=novos.concat(D.gastos);
+  if(_mesRefPDF) mesFiltro=_mesRefPDF; // já abre o app no mês onde a fatura entrou
+  saveData();
+  showToast("✅ "+novos.length+" lançamentos importados da fatura!","success");
+  _itensPDF=[];
+  _totalImpressoPDF=null;
+  _futurasPDF=[];
+  document.getElementById("pdfResult").innerHTML="";
+  render();
+}
+
+// ─── INIT ─────────────────────────────────────────
+loadData();
+setInterval(loadData,30000);
+</script>
+</body>
+</html>
